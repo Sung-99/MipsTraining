@@ -1,9 +1,15 @@
+# Laboratório de Arquitetura e Organização de Computadores I
+# Aluno: Vitor Hugo Mota
+# Prof.ª Poliana Corrêa 
+#Tarefa02
+
 .data
 Menu: .asciiz "==================MENU==================\n*Opção questão A(Dig 1)*\n*Opção questão B(Dig 2)*\n*Opção questão C(Dig 3)*\n*Opção questão D(Dig 4)*\n"
 Parametro1MSG: .asciiz "Digite o primeiro numero: "
 Parametro2MSG: .asciiz "Digite o segundo numero: "
 Parametro3MSG: .asciiz "Digite o terceiro numero: "
 DigiteSuaEscolha: .asciiz "Digite um numero que corresponda ao menu: "
+espaco: .asciiz " "
 .text
 la $a0, Menu
 li $v0, 4
@@ -66,10 +72,31 @@ Op2Procedimento:
 	jal Op2
 	#retorno da função
 	j finish
-Op3Procedimento: 
+Op3Procedimento:
+	la $a0, Parametro1MSG       #Carrego a msg primeiro parametro
+	li $v0, 4 		 #Direciono o sistema para exibir
+	syscall	
+	li $v0, 5		#Lendo primeira entrada de parametro
+	syscall
+	move $a1, $v0		 #movo ela para a1
 	jal Op3
 	j finish
 Op4Procedimento: 
+	la $a0, Parametro1MSG       #Carrego a msg primeiro parametro
+	li $v0, 4 		 #Direciono o sistema para exibir
+	syscall	
+	li $v0, 5		#Lendo primeira entrada de parametro
+	syscall
+	move $a1, $v0
+	beq $a1, 1, finishNtermos1
+	beq $a1, 0, finishNtermos1
+	addi $t2, $zero, 1 #contador
+	addi $a0, $zero, 1 #inicio
+	li $v0, 1
+	syscall
+	la $a0, espaco #espacinho entre cada numero
+	li $v0, 4
+	syscall
 	jal Op4
 	j finish	
 
@@ -105,11 +132,13 @@ Retorna0:
 
 # ===================== TUDO SOBRE A OPÇÃO 2 ================================================
 Op2:
+	beq $a1, $a2, ConfereIguais #se os 2 primeiros sao iguais, pula para conferir os 2 ultimos 
 	slt $t0, $a2, $a1 #Confiro os 2 primeiros
-	beq $t0, 1, Ordena
+	beq $t0, 0, Ordena
 	jal OrdenaComplexa
+	beq $a1, $a2, finishOrd #se os 2 primeiros sao iguais tambem, nao se faz nada
 	slt $t0, $a1, $a2 #Confiro os 2 primeiros após a analise do "fluxo mais chatinho"
-	beq $t0, 1, finish
+	beq $t0, 0, finishOrd
 Ordena: #após o retorno, meu a1 será menor que meu a2, entao preciso saber se meu menor numero é menor que o terceiro
 	move $t1, $a1
 	move $a1, $a2
@@ -121,29 +150,91 @@ OrdenaComplexa:
 	      #por exemplo, ordenação simples : 5 1 3, eu simplesmente ando com o 5 até a ultima posição, isso segue o fluxo normal do código
 	      #	fluxo onde a2 < a1 ====*(após a troca)* a2 < a3 ===== fim
 	      #fluxo mais chatinho a1 < a2 > a3 ou a1 > a2 > a3 aonde meu primeiro beq será pulado 
-	      
+	beq $a2, $a3, finishOrd #se os 2 ultimos sao iguais tambem, nao se faz nada e ja finaliza      
 	slt $t0, $a3, $a2 #Confiro os 2 ultimos e se meu ultimo é maior que meu segundo numero, ele é maior que o primeiro tambem
-	beq $t0, 0, finish
+	beq $t0, 1, finishOrd
 	move $t1, $a2
 	move $a2, $a3
 	move $a3, $t1
 	jr $ra #caso caia no fluxo mais chatinho, preciso conferir se meu segundo numero é menor que meu primeiro novamente
-# ===================== FIM DE TUDO SOBRE A OPÇÃO 32=========================================
+ConfereIguais: #caso os 2 ultimos sejam diferentes, basta saber se meu ultimo numero é maior 
+		#que um dos dois primeiros, se sim, ele é colocado em primeiro
+	beq $a2, $a3, finishOrd #se os 2 ultimos sao iguais tambem, nao se faz nada e ja finaliza    
+	slt $t0, $a3, $a2
+	beq $t0, 0, MudaElemento #avalia se o ultimo é maior que o penultimo, se sim, troca posição
+	j finishOrd #se meu ultimo é menor que meu segundo(que é igual ao primeiro, deixa do jeito que está)
+MudaElemento:
+	move $t1, $a1
+	move $a1, $a3
+	move $a3, $t1
+	j finishOrd #finaliza após a ultima análise
+# ===================== FIM DE TUDO SOBRE A OPÇÃO 2=========================================
 # ===================== TUDO SOBRE A OPÇÃO 3 ================================================
-Op3:
-	addi $v0, $zero, 3
+Op3:#reutilizei um exercicio ja feito em outra tarefa
+	addi $t0, $zero, 1 
+	add $a2, $a1, $zero
+	loop:	
+		add $a2, $a2, $a3
+		sub $a3, $a1, $t0
+	
+		slti $t1, $a3, 1
+		addi $t0, $t0, 1	
+		beq $t1,$zero, loop	
+	exit:
+		add $a0, $a2, $zero
+		li $v0, 1
+		syscall
 	jr  $ra
 # ===================== FIM DE TUDO SOBRE A OPÇÃO 3========================================
 # ===================== TUDO SOBRE A OPÇÃO 4 ===============================================
-Op4:
-	addi $v0, $zero, 4
+Op4:#reutilizei um exercicio ja feito em outra tarefa
+    #caso em que o usuario digitou algo diferente de 1 ou 0
+	sub $a1, $a1, 1 
+	beq $a1, $zero, sair
+	
+	add $t2, $t2, 1
+	and $t3, $t2, 1
+	beq $t3, 1, eImpar
+	beq $t3, 0, mostrar
+    
+mostrar:
+	add $a0, $t2, $zero
+	li $v0, 1
+	syscall
+	la $a0, espaco
+	li $v0, 4
+	syscall
+	j Op4
+
+eImpar:	
+	add $t2, $t2, 1
+	j mostrar
+sair: #fim do algoritmo
 	jr  $ra
 # ===================== FIM DE TUDO SOBRE A OPÇÃO 4 =======================================
 
 
 #fim de tudo
+finishOrd: #um finish diferente, pois foi pedido na questao que mostrasse os numeros ordenados
+	move $a0, $a1
+	li $v0, 1
+	syscall
+	move $a0, $a2
+	li $v0, 1
+	syscall
+	move $a0, $a3
+	li $v0, 1
+	syscall
+	li $v0, 10
+	syscall
+finishNtermos1:#um finish diferente, pois foi pedido na questao que mostrasse os n termos quando digita 1 ou 0
+	move $a0, $a1
+	li $v0, 1
+	syscall
+	li $v0, 10
+	syscall	 		
 finish:
-li $v0, 10
-syscall	
+	li $v0, 10
+	syscall	
 	
 	
