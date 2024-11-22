@@ -1,0 +1,66 @@
+
+# Laboratório de Arquitetura e Organização de Computadores I
+# Aluno: Vitor Hugo Mota
+# Prof.ª Poliana Corrêa 
+#Tarefa03
+
+.data
+Parametro1MSG: .asciiz "Digite um numero natural: "
+.text
+la $a0, Parametro1MSG       #Carrego a msg primeiro parametro
+li $v0, 4 		 #Direciono o sistema para exibir
+syscall
+li $v0, 5		#Lendo primeira entrada de parametro
+syscall	
+move $a1, $v0
+jal F
+move $a0, $a1
+li $v0, 1
+syscall
+li $v0, 10
+syscall
+
+F:
+	subi $sp, $sp, 4
+	
+	sw $ra, 4($sp)
+	
+	add $ra, $ra, 4
+	
+	jal Confere
+	lw $ra, 4($sp)
+	move $a1, $a2
+	addi $sp, $sp, 4
+	jr $ra
+	
+15
+(15) 107
+(11) 51
+(7) 23
+(3) 9
+Confere:
+	add $t1, $zero, $zero
+	slti $t0, $a1, 4
+	subi $a1, $a1, 4
+	beq $t0, 0,  F
+Retorna3VezesN:
+	addi $a3, $a3, 3
+	addi $t1, $t1, 1
+	beq $t1, $a1, Retorna
+	j Retorna3VezesN
+	
+Retorna:
+	
+	#add $a3, $a3, $a3
+	#addi $a3, $a3, 5
+	move $a2, $a3
+	#lw $ra, 8($sp)
+	jr $ra
+	
+subtraiN:
+	
+	j Confere
+sai:
+	li $v0, 10
+	syscall
+	
