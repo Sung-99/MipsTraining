@@ -1,0 +1,22 @@
+# Reading E:/Downloads_Instaladores/Instaladores/ModelSlim/modelsim_ase/tcl/vsim/pref.tcl 
+# do Tarefa03_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying E:\Downloads_Instaladores\Instaladores\ModelSlim\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied E:\Downloads_Instaladores\Instaladores\ModelSlim\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/cefet\ 20242/LAOC/Quartus/Tarefa03/Decodificador {D:/cefet 20242/LAOC/Quartus/Tarefa03/Decodificador/Tarefa03.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Tarefa03
+# 
+# Top level modules:
+# 	Tarefa03
+# 
+vsim work.Tarefa03
+# vsim work.Tarefa03 
+# Loading work.Tarefa03
