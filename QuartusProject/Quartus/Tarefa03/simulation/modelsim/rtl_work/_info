@@ -1,0 +1,47 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\cefet 20242\LAOC\Quartus\Tarefa03\simulation\modelsim
+vDecod
+!i10b 1
+!s100 @f8TU:F]MH?N5<O1O>Ai_1
+Ia:FB1ZDKH;bo[Z:gB:XFe3
+VETEb3;m=;bjT_6WGNiBbB0
+Z1 dD:\cefet 20242\LAOC\Quartus\Tarefa03\simulation\modelsim
+Z2 w1732826938
+Z3 8D:/cefet 20242/LAOC/Quartus/Tarefa03/Decod.v
+Z4 FD:/cefet 20242/LAOC/Quartus/Tarefa03/Decod.v
+L0 24
+Z5 OV;L;10.1d;51
+r1
+!s85 0
+31
+Z6 !s108 1732827732.453000
+Z7 !s107 D:/cefet 20242/LAOC/Quartus/Tarefa03/Decod.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/cefet 20242/LAOC/Quartus/Tarefa03|D:/cefet 20242/LAOC/Quartus/Tarefa03/Decod.v|
+!s101 -O0
+Z9 o-vlog01compat -work work -O0
+Z10 !s92 -vlog01compat -work work {+incdir+D:/cefet 20242/LAOC/Quartus/Tarefa03} -O0
+n@decod
+vDecodd
+!i10b 1
+!s100 MzI0M<Pm^_TGz_j]?T<nQ0
+I5T^h;IXlGR_Co?V8NKBfA1
+VL6mT_XQmi?Km3cNb3[CjY0
+R1
+R2
+R3
+R4
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+R10
+n@decodd

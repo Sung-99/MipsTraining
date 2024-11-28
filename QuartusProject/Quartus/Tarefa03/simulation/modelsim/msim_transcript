@@ -1,0 +1,40 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Decod_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/cefet\ 20242/LAOC/Quartus/Tarefa03 {D:/cefet 20242/LAOC/Quartus/Tarefa03/Decod.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Decodd
+# -- Compiling module Decod
+# 
+# Top level modules:
+# 	Decod
+# 
+vsim +altera -do Decod_run_msim_rtl_verilog.do -l msim_transcript -gui work.Decodd
+# vsim +altera -do Decod_run_msim_rtl_verilog.do -l msim_transcript -gui work.Decodd 
+# Loading work.Decodd
+# do Decod_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/cefet\ 20242/LAOC/Quartus/Tarefa03 {D:/cefet 20242/LAOC/Quartus/Tarefa03/Decod.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Decodd
+# -- Compiling module Decod
+# 
+# Top level modules:
+# 	Decod
+# 
+wave create -driver freeze -pattern constant -value zzzzzzzzz -range 8 0 -starttime 0ps -endtime 1000ps sim:/Decodd/entradaBin
