@@ -1,0 +1,19 @@
+|Decod
+entradaBin[0] => Decoder0.IN8
+entradaBin[1] => Decoder0.IN7
+entradaBin[2] => Decoder0.IN6
+entradaBin[3] => Decoder0.IN5
+entradaBin[4] => Decoder0.IN4
+entradaBin[5] => Decoder0.IN3
+entradaBin[6] => Decoder0.IN2
+entradaBin[7] => Decoder0.IN1
+entradaBin[8] => Decoder0.IN0
+outputSegmentos[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+outputSegmentos[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+outputSegmentos[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+outputSegmentos[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+outputSegmentos[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+outputSegmentos[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+outputSegmentos[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
