@@ -23,9 +23,9 @@ endmodule
 
 module DecodInstancia(
 
-input [17:0] SW,
+input [8:0] SW,
 
-output [17:0] LEDR
+output [6:0] HEX
 );
 wire [8:0] entradaBin;
 
