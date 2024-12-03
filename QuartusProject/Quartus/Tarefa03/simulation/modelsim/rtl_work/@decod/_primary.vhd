@@ -2,7 +2,7 @@ library verilog;
 use verilog.vl_types.all;
 entity Decod is
     port(
-        SW              : in     vl_logic_vector(17 downto 0);
-        LEDR            : out    vl_logic_vector(17 downto 0)
+        entradaBin      : in     vl_logic_vector(8 downto 0);
+        outputSegmentos : out    vl_logic_vector(6 downto 0)
     );
 end Decod;
