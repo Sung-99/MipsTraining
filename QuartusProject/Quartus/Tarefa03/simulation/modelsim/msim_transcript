@@ -38,4 +38,54 @@ vsim +altera -do Decod_run_msim_rtl_verilog.do -l msim_transcript -gui work.Deco
 # Top level modules:
 # 	DecodInstancia
 # 
-wave create -driver freeze -pattern counter -startvalue 000000000 -endvalue 111111111 -type Range -direction Up -period 50ps -step 1 -repeat forever -range 8 0 -starttime 0ps -endtime 1000ps sim:/DecodInstancia/SW
+add wave -position insertpoint  \
+sim:/DecodInstancia/HEX
+add wave -position end  sim:/DecodInstancia/DECIMAL
+force -freeze sim:/DecodInstancia/entradaBin 00000000 0
+run
+force -freeze {sim:/DecodInstancia/entradaBin[1]} 00000001 0
+run
+force -freeze {sim:/DecodInstancia/entradaBin[1]} 00000001 0
+run
+force -freeze {sim:/DecodInstancia/entradaBin[1]} 00000001 0
+run
+force -freeze {sim:/DecodInstancia/entradaBin[2]} 00000010 0
+run
+force -freeze {sim:/DecodInstancia/entradaBin[3]} 00000011 0
+run
+restart
+# Loading work.DecodInstancia
+# Loading work.Decod
+force -freeze {sim:/DecodInstancia/entradaBin[0]} 00000000 0
+force -freeze {sim:/DecodInstancia/entradaBin[1]} 00000001 0
+run -all
+force -freeze {sim:/DecodInstancia/entradaBin[0]} 00000000 0
+restart
+force -freeze {sim:/DecodInstancia/SW[0]} 00000000 0
+force -freeze {sim:/DecodInstancia/SW[1]} 00000001 0
+run -all
+force -freeze {sim:/DecodInstancia/SW[0]} 00000000 0
+force -freeze {sim:/DecodInstancia/SW[1]} 00000001 0
+run
+restart
+force -freeze sim:/DecodInstancia/SW 00000000 0
+run
+force -freeze sim:/DecodInstancia/SW 000000001 0
+run
+force -freeze sim:/DecodInstancia/SW 000000010 0
+run
+force -freeze sim:/DecodInstancia/SW 000000011 0
+run
+force -freeze sim:/DecodInstancia/SW 000000100 0
+run
+force -freeze sim:/DecodInstancia/SW 000000101 0
+run
+force -freeze sim:/DecodInstancia/SW 000000110 0
+run
+force -freeze sim:/DecodInstancia/SW 000000111 0
+run
+force -freeze sim:/DecodInstancia/SW 000001000 0
+run -continue
+run
+force -freeze sim:/DecodInstancia/SW 000001001 0
+run
