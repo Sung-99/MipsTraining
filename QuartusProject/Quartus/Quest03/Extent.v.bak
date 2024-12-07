@@ -1,0 +1,16 @@
+odule Exntet (
+    input wire [7:0] SW,         // 8 switches as input
+    output reg [15:0] LEDR       // 16 LEDs connected to LEDR
+);
+
+always @(*) begin
+    // Keep the first 8 bits from the switches and extend the next 8 bits based on the MSB
+    LEDR[15:8] = SW;                           // Keep the original 8 bits from switches
+    if (SW[7]) begin                           // Check the MSB (the most significant switch)
+        LEDR[7:0] = 8'b11111111;               // Light up all next 8 LEDs if MSB is 1
+    end else begin
+        LEDR[7:0] = 8'b00000000;               // Turn off all next 8 LEDs if MSB is 0
+    end
+end
+
+endmodule

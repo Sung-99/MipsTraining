@@ -1,0 +1,47 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Extent_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/cefet\ 20242/LAOC/Quartus/Quest03 {D:/cefet 20242/LAOC/Quartus/Quest03/Extent.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Extent
+# 
+# Top level modules:
+# 	Extent
+# 
+vsim +altera -do Extent_run_msim_rtl_verilog.do -l msim_transcript -gui work.Extent
+# vsim +altera -do Extent_run_msim_rtl_verilog.do -l msim_transcript -gui work.Extent 
+# Loading work.Extent
+# do Extent_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/cefet\ 20242/LAOC/Quartus/Quest03 {D:/cefet 20242/LAOC/Quartus/Quest03/Extent.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Extent
+# 
+# Top level modules:
+# 	Extent
+# 
+add wave -position insertpoint  \
+sim:/Extent/LEDR
+force -freeze {sim:/Extent/SW[7]} 1 0
+run
+force -freeze {sim:/Extent/SW[7]} 0 0
+run
+force -freeze {sim:/Extent/SW[7]} 0 0
+run
+force -freeze {sim:/Extent/SW[7]} 1 0
+run

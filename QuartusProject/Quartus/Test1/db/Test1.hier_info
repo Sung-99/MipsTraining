@@ -1,0 +1,38 @@
+|Test1
+SW[0] => entradaBin[0].IN1
+SW[1] => entradaBin[1].IN1
+SW[2] => entradaBin[2].IN1
+SW[3] => entradaBin[3].IN1
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+HEX0[0] <= SubModule:Decod_Insta.outputSegmentos
+HEX0[1] <= SubModule:Decod_Insta.outputSegmentos
+HEX0[2] <= SubModule:Decod_Insta.outputSegmentos
+HEX0[3] <= SubModule:Decod_Insta.outputSegmentos
+HEX0[4] <= SubModule:Decod_Insta.outputSegmentos
+HEX0[5] <= SubModule:Decod_Insta.outputSegmentos
+HEX0[6] <= SubModule:Decod_Insta.outputSegmentos
+
+
+|Test1|SubModule:Decod_Insta
+entradaBin[0] => Decoder0.IN8
+entradaBin[1] => Decoder0.IN7
+entradaBin[2] => Decoder0.IN6
+entradaBin[3] => Decoder0.IN5
+entradaBin[4] => Decoder0.IN4
+entradaBin[5] => Decoder0.IN3
+entradaBin[6] => Decoder0.IN2
+entradaBin[7] => Decoder0.IN1
+entradaBin[8] => Decoder0.IN0
+outputSegmentos[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+outputSegmentos[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+outputSegmentos[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+outputSegmentos[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+outputSegmentos[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+outputSegmentos[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+outputSegmentos[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
