@@ -1,0 +1,13 @@
+module Decod (
+    input [8:0] entradaBin,
+    output reg [6:0] outputSegmentos
+);
+
+endmodule
+
+module TopModule (
+    input [8:0] SW,
+    output [6:0] HEX
+);
+    Decod Decod_Insta(SW, HEX); // Positional mapping
+endmodule

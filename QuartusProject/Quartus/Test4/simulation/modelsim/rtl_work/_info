@@ -1,0 +1,26 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\cefet 20242\LAOC\Quartus\Quest03\simulation\modelsim
+vExtent
+!i10b 1
+!s100 N9OhL46A<[J9=^T6L[2Kh2
+I<T^^K4k[>Z=z9QkX<^<PE1
+VCN`5BZ>>UI?_980=0VmBK1
+Z1 dD:\cefet 20242\LAOC\Quartus\Quest03\simulation\modelsim
+w1733364514
+8D:/cefet 20242/LAOC/Quartus/Quest03/Extent.v
+FD:/cefet 20242/LAOC/Quartus/Quest03/Extent.v
+L0 1
+OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1733369658.836000
+!s107 D:/cefet 20242/LAOC/Quartus/Quest03/Extent.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/cefet 20242/LAOC/Quartus/Quest03|D:/cefet 20242/LAOC/Quartus/Quest03/Extent.v|
+!s101 -O0
+o-vlog01compat -work work -O0
+!s92 -vlog01compat -work work {+incdir+D:/cefet 20242/LAOC/Quartus/Quest03} -O0
+n@extent
