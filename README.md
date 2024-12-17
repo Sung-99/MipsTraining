@@ -19,9 +19,8 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-![HTML][HTML-shield]
-![Node][Node-Shield]
-![TypeS][TypeS-Shield]
+![Mars][Mars-shield]
+![Quartus][Quartus-Shield]
 ![Projeto][Projeto-shield]
 ![Dedicação][Dedicação-shield]
 ![Fóco][Fóco-shield]
@@ -29,35 +28,38 @@
 
 
 
-#  Coletiva de exercicios em Node
+#  Coletiva de exercicios em MIPS / Quartus
 
 
 *Seram adicionados exercicios simples, medio ou dificil nesse repositório*
 
 ## Desafios
 
-*Nessa construção o fóco é encontrar meios de resolver diferentes exercicios com a utilização de um site Index simples para o melhor entendimento sobre servidores*
+*Nessa construção o fóco é encontrar meios de resolver diferentes exercicios com a utilização do Quartus/Mars como IDEs*
 
 ####  Linguagens usadas e Softwares
 
 
--TypeScript
+-Quartus
 
--Html
+-Mips
 
--Gitbash
+-ModelSim
 
--VsCode
+-Assembly
+
+-Verilog
 
 ####  Sistema operacional
 -Windows 10
 
 #### Plataformas
 
--Node
+-Mars
 
--Github
+-Quartus
 
+-GitHub
 
 <!--
 ***Just to create badges
@@ -82,13 +84,12 @@ Vitor Hugo Mota Soares
 
 
 
-[HTML-shield]:https://img.shields.io/badge/HTML--orange?style=for-the-badge&logo=gitlab&logoColor=orange&labelColor=blue&color=orange
+[Mars-shield]:https://img.shields.io/badge/Mars--red?style=for-the-badge&color=blue
 [Fóco-shield]: https://img.shields.io/badge/F%C3%B3co--silver?style=for-the-badge&logoColor=white&labelColor=orange
 [Dedicação-shield]:https://img.shields.io/badge/Dedica%C3%A7%C3%A3o--red?style=for-the-badge&logoColor=white&labelColor=Navy%20blue
 [Projeto-shield]: https://img.shields.io/badge/Projeto--red?style=for-the-badge&logoColor=white&labelColor=silver
 [Motivador-shield]: https://img.shields.io/badge/Esfor%C3%A7o--red?style=for-the-badge&logoColor=white&labelColor=teal   
 [linkedin-shield]: https://img.shields.io/badge/-brightgreen?style=for-the-badge&logo=linkedin&logoColor=white&label=LinkedIn&labelColor=blue&color=blue
 [linkedin-url]: https://www.linkedin.com/in/vitor-hugo99/
-[Node-Shield]:https://img.shields.io/badge/node--black?style=for-the-badge&logoColor=green&label=NODE&color=black
-[TypeS-Shield]:https://img.shields.io/badge/node--black?style=for-the-badge&logo=TypeScript&logoColor=green&label=TYPE%20SCRIPT&color=black
+[Quartus-Shield]:https://img.shields.io/badge/Quartus--blue?style=for-the-badge&color=white
 
