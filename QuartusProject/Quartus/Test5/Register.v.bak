@@ -33,9 +33,6 @@ module Register (
 	 
 	 end
     
-	 
-	 
-	 
 	 // BLOCO de leitura assíncrona dos registradores
     // Data1 e Data2 são atualizados sempre que os índices de leitura (Read1 e Read2) mudam
     always @(*) begin
@@ -51,7 +48,7 @@ module Register (
         end
     end
 	  always @(*) begin
-        HEX0 = get_hex(registradores[Read1][4:0]); // EXIBE APÓS ARMAZENAR NO REGISTRADOR
+        HEX0 = get_hex(registradores[WriteReg][4:0]); // EXIBE APÓS ARMAZENAR NO REGISTRADOR
         HEX1 = get_hex(Data1[4:0]);
 		  HEX2 = get_hex(WriteReg[2:0]);
     end
