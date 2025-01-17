@@ -1,54 +1,6 @@
+
+
 module Processor (
-    input [6:0] opcode,
-    input [2:0] funct3,
-    input [6:0] funct7,
-    output reg RegWrite,
-    output reg ALUSrc,
-    output reg [2:0] ALUControl
-);
-    always @(*) begin
-        // Inicialização dos sinais
-        RegWrite = 0;
-        ALUSrc = 0;
-        ALUControl = 3'b000;
-
-        // Decodificação do opcode
-        case (opcode)
-            7'b0110011: begin // Tipo R
-                RegWrite = 1;
-                ALUSrc = 0;
-                case (funct3)
-                    3'b000: ALUControl = (funct7 == 7'b0100000) ? 3'b001 : 3'b000; // SUB ou ADD
-                    3'b111: ALUControl = 3'b100; // AND
-                    3'b110: ALUControl = 3'b101; // OR
-                    default: ALUControl = 3'b000;
-                endcase
-            end
-            7'b0010011: begin // Tipo I (ADDI)
-                RegWrite = 1;
-                ALUSrc = 1;
-                ALUControl = 3'b000; // ADD
-            end
-            7'b0000011: begin // LW
-                RegWrite = 1;
-                ALUSrc = 1;
-                ALUControl = 3'b000; // ADD
-            end
-            7'b0100011: begin // SW
-                RegWrite = 0;
-                ALUSrc = 1;
-                ALUControl = 3'b000; // ADD
-            end
-            default: begin
-                RegWrite = 0;
-                ALUSrc = 0;
-                ALUControl = 3'b000;
-            end
-        endcase
-    end
-endmodule
-
-module microcpu (
     input [17:0] SW,
     output wire [0:6] HEX7, HEX6, HEX2, HEX1
 );
@@ -107,7 +59,7 @@ module microcpu (
     );
 
     // Memória de instrução
-    InstructionMemory im_inst (
+    MemInstrucao im_inst (
         .clk(clk),
         .MemRead(1'b1),
         .MemWrite(1'b0),
@@ -148,15 +100,7 @@ module microcpu (
         .SLT_out()
     );
 
-    // Controle
-    ControlUnit control_unit (
-        .opcode(instruction_out[6:0]),
-        .funct3(instruction_out[14:12]),
-        .funct7(instruction_out[31:25]),
-        .RegWrite(RegWrite),
-        .ALUSrc(ALUSrc),
-        .ALUControl(ALUControl)
-    );
+
 
     // Mapeamento dos displays de 7 segmentos
     assign HEX7 = get_hex(PCValue[3:0]);
@@ -165,7 +109,7 @@ module microcpu (
     assign HEX1 = get_hex(instruction_out[24:20]);
 
     // Função para converter valores para display de 7 segmentos
-    function [0:6] get_hex(input [3:0] value);
+    function [0:6] get_hex(input [4:0] value);
         case (value)
             4'b0000: get_hex = 7'b0000001; // 0
             4'b0001: get_hex = 7'b1001111; // 1

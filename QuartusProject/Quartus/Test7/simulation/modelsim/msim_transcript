@@ -1,0 +1,121 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Processor_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+E:/Prog\ Area/MIPS\ Asembly/QuartusProject/Quartus/Test7 {E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/Processor.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Processor
+# 
+# Top level modules:
+# 	Processor
+# vlog -vlog01compat -work work +incdir+E:/Prog\ Area/MIPS\ Asembly/QuartusProject/Quartus/Test7 {E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/registrador.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module registrador
+# 
+# Top level modules:
+# 	registrador
+# vlog -vlog01compat -work work +incdir+E:/Prog\ Area/MIPS\ Asembly/QuartusProject/Quartus/Test7 {E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/MUX.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module MUX
+# 
+# Top level modules:
+# 	MUX
+# vlog -vlog01compat -work work +incdir+E:/Prog\ Area/MIPS\ Asembly/QuartusProject/Quartus/Test7 {E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/SignExtend.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SignExtend
+# 
+# Top level modules:
+# 	SignExtend
+# vlog -vlog01compat -work work +incdir+E:/Prog\ Area/MIPS\ Asembly/QuartusProject/Quartus/Test7 {E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/somadorcompleto.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SomadorCompleto
+# -- Compiling module FullAdder1Bit
+# 
+# Top level modules:
+# 	SomadorCompleto
+# vlog -vlog01compat -work work +incdir+E:/Prog\ Area/MIPS\ Asembly/QuartusProject/Quartus/Test7 {E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/pc.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# vlog -vlog01compat -work work +incdir+E:/Prog\ Area/MIPS\ Asembly/QuartusProject/Quartus/Test7 {E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/meminstrucao.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module MemInstrucao
+# ** Error: E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/meminstrucao.v(26): A begin/end block was found with an empty body.  This is permitted in SystemVerilog, but not permitted in Verilog.  Please look for any stray semicolons.
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Processor_run_msim_rtl_verilog.do line 14
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+E:/Prog\ Area/MIPS\ Asembly/QuartusProject/Quartus/Test7 {E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7..."
+vsim rtl_work.Processor
+# vsim rtl_work.Processor 
+# Loading rtl_work.Processor
+# Loading rtl_work.SignExtend
+# Loading rtl_work.SomadorCompleto
+# Loading rtl_work.PC
+# ** Error: (vsim-3033) E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/Processor.v(69): Instantiation of 'MemInstrucao' failed. The design unit was not found.
+# 
+#         Region: /Processor
+#         Searched libraries:
+#             E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/simulation/modelsim/rtl_work
+# Loading rtl_work.registrador
+# Loading rtl_work.MUX
+# ** Error: (vsim-3033) E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/Processor.v(101): Instantiation of 'ULA' failed. The design unit was not found.
+# 
+#         Region: /Processor
+#         Searched libraries:
+#             E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/simulation/modelsim/rtl_work
+# Error loading design
+vsim rtl_work.Processor
+# vsim rtl_work.Processor 
+# Loading rtl_work.Processor
+# Loading rtl_work.SignExtend
+# Loading rtl_work.SomadorCompleto
+# Loading rtl_work.PC
+# ** Error: (vsim-3033) E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/Processor.v(69): Instantiation of 'MemInstrucao' failed. The design unit was not found.
+# 
+#         Region: /Processor
+#         Searched libraries:
+#             E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/simulation/modelsim/rtl_work
+# Loading rtl_work.registrador
+# Loading rtl_work.MUX
+# ** Error: (vsim-3033) E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/Processor.v(101): Instantiation of 'ULA' failed. The design unit was not found.
+# 
+#         Region: /Processor
+#         Searched libraries:
+#             E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/simulation/modelsim/rtl_work
+# Error loading design
+vsim rtl_work.Processor
+# vsim rtl_work.Processor 
+# Loading rtl_work.Processor
+# Loading rtl_work.SignExtend
+# Loading rtl_work.SomadorCompleto
+# Loading rtl_work.PC
+# ** Error: (vsim-3033) E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/Processor.v(69): Instantiation of 'MemInstrucao' failed. The design unit was not found.
+# 
+#         Region: /Processor
+#         Searched libraries:
+#             E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/simulation/modelsim/rtl_work
+# Loading rtl_work.registrador
+# Loading rtl_work.MUX
+# ** Error: (vsim-3033) E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/Processor.v(101): Instantiation of 'ULA' failed. The design unit was not found.
+# 
+#         Region: /Processor
+#         Searched libraries:
+#             E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test7/simulation/modelsim/rtl_work
+# Error loading design
+vsim rtl_work.MUX
+# vsim rtl_work.MUX 
+# Loading rtl_work.MUX
+vsim rtl_work.PC
+# vsim rtl_work.PC 
+# Loading rtl_work.PC
