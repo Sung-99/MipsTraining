@@ -1,0 +1,130 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Prog Area\MIPS Asembly\QuartusProject\Quartus\Test11\simulation\modelsim
+vcpu
+IP;f8zHMod8aWNPLgFh^5[0
+V]Xz7KX5Q]CaHMFZGlX0mm0
+Z1 dE:\Prog Area\MIPS Asembly\QuartusProject\Quartus\Test11\simulation\modelsim
+w1737062802
+8E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/cpu.v
+FE:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/cpu.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work {+incdir+E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11} -O0
+!i10b 1
+!s100 ?9XI?m1z=Gfc6LK8D`FOb3
+!s85 0
+!s108 1737063080.023000
+!s107 E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/cpu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11|E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/cpu.v|
+!s101 -O0
+vFullAdder1Bit
+IKa[YFJ<G>0a`h4d9SJHKb0
+VURn@^2MW0ldX2TgTBZJH]3
+R1
+Z5 w1737060426
+Z6 8E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/somadorcompleto.v
+Z7 FE:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/somadorcompleto.v
+L0 59
+R2
+r1
+31
+Z8 !s108 1737063080.286000
+Z9 !s107 E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/somadorcompleto.v|
+Z10 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11|E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/somadorcompleto.v|
+R3
+R4
+n@full@adder1@bit
+!i10b 1
+!s100 F]@[8TNZPMcO2M@dRH2k[3
+!s85 0
+!s101 -O0
+vMUX
+I^fjaj7Aoh712>0AER;W8F0
+VRnI[MYZjg@UP`6zC9l9X:1
+R1
+w1737062495
+8E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/MUX.v
+FE:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/MUX.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@m@u@x
+!i10b 1
+!s100 gdgd:iaN5DMPAKW[e1>0C0
+!s85 0
+!s108 1737063080.130000
+!s107 E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/MUX.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11|E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/MUX.v|
+!s101 -O0
+vPC
+!i10b 1
+!s100 AzG]?CZbZ3zCU_>0UGTTI1
+Io`H7fQzlN4jn[e_<9V=>L2
+V=dcBfR2`PY=lMh>zbSLeC2
+R1
+w1736456531
+8E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/pc.v
+FE:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/pc.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1737063080.386000
+!s107 E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/pc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11|E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/pc.v|
+!s101 -O0
+R3
+R4
+n@p@c
+vSignExtend
+I;F0VQ_FK>BgQhZETjDb_h3
+VeE4`S3Nok6WEYQBhH`z?:3
+R1
+w1737061007
+8E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/signextend.v
+FE:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/signextend.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@sign@extend
+!i10b 1
+!s100 Gc5M]]Wc`7hjbo7:80EPL0
+!s85 0
+!s108 1737063080.208000
+!s107 E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/signextend.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11|E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test11/signextend.v|
+!s101 -O0
+vSomadorCompleto
+Ikj?;jbnOTK>?JFA?0Ua1S0
+V1GV2m^oX8`aA<C>Fo^i1`1
+R1
+R5
+R6
+R7
+L0 19
+R2
+r1
+31
+R8
+R9
+R10
+R3
+R4
+n@somador@completo
+!i10b 1
+!s100 iDH3Lfnf665NFDAK]2IoL2
+!s85 0
+!s101 -O0
