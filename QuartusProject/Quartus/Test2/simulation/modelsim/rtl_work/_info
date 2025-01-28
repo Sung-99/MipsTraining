@@ -1,0 +1,67 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Prog Area\MIPS Asembly\QuartusProject\Quartus\Test2\simulation\modelsim
+vDisplay
+!i10b 1
+!s100 K2g4oCTE@RXQQ[UIjn]`M0
+I<=^0z^EUS?eD>Q9Y=OUAY2
+V;6Ub4CVZeEQzDObi[H>Qg2
+Z1 dE:\Prog Area\MIPS Asembly\QuartusProject\Quartus\Test2\simulation\modelsim
+Z2 w1733968977
+Z3 8E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test2/TopModule.v
+Z4 FE:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test2/TopModule.v
+L0 64
+Z5 OV;L;10.1d;51
+r1
+!s85 0
+31
+Z6 !s108 1737389576.946000
+Z7 !s107 E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test2/TopModule.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test2|E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test2/TopModule.v|
+!s101 -O0
+Z9 o-vlog01compat -work work -O0
+Z10 !s92 -vlog01compat -work work {+incdir+E:/Prog Area/MIPS Asembly/QuartusProject/Quartus/Test2} -O0
+n@display
+vonebitadder
+!i10b 1
+!s100 ]SJcmN?oje]hjH[Ea_fN50
+IKHMg@S@MlUi_EJHC5?0`02
+VfHz]?XEb7_g7ASH_on]J82
+R1
+R2
+R3
+R4
+L0 51
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+R10
+vTopModule
+!i10b 1
+!s100 iV?=0P[8:?Q6cb4GKaIUA0
+IKPf[ad9[1CUXTI4N;]YfX2
+VFH85Hb]aF=BFeWXHPUi6B1
+R1
+R2
+R3
+R4
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!s101 -O0
+R9
+R10
+n@top@module
