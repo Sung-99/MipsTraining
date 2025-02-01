@@ -1,0 +1,11 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica4 {C:/Users/aluno/Desktop/Pratica4/microcpu.v}
+vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica4 {C:/Users/aluno/Desktop/Pratica4/PC.v}
+vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica4 {C:/Users/aluno/Desktop/Pratica4/SomadorCompleto.v}
+

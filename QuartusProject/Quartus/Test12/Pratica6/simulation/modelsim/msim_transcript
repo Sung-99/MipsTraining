@@ -1,0 +1,91 @@
+# Reading C:/DECOM/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do microcpu_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying C:\DECOM\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica6 {C:/Users/aluno/Desktop/Pratica6/microcpu.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module microcpu
+# ** Warning: C:/Users/aluno/Desktop/Pratica6/microcpu.v(81): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# 
+# Top level modules:
+# 	microcpu
+# vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica6 {C:/Users/aluno/Desktop/Pratica6/ULA.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ULA
+# 
+# Top level modules:
+# 	ULA
+# vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica6 {C:/Users/aluno/Desktop/Pratica6/registrador.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module registrador
+# 
+# Top level modules:
+# 	registrador
+# vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica6 {C:/Users/aluno/Desktop/Pratica6/PC.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica6 {C:/Users/aluno/Desktop/Pratica6/SomadorCompleto.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SomadorCompleto
+# -- Compiling module FullAdder1Bit
+# 
+# Top level modules:
+# 	SomadorCompleto
+# vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica6 {C:/Users/aluno/Desktop/Pratica6/InstructionMemory.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module InstructionMemory
+# 
+# Top level modules:
+# 	InstructionMemory
+# vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica6/output_files {C:/Users/aluno/Desktop/Pratica6/output_files/SignExtend.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SignExtend
+# 
+# Top level modules:
+# 	SignExtend
+# vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica6/output_files {C:/Users/aluno/Desktop/Pratica6/output_files/MUX.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module MUX
+# 
+# Top level modules:
+# 	MUX
+# vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica6 {C:/Users/aluno/Desktop/Pratica6/ALUcontr.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ALUcontr
+# 
+# Top level modules:
+# 	ALUcontr
+# vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica6 {C:/Users/aluno/Desktop/Pratica6/AND.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ANDDd
+# 
+# Top level modules:
+# 	ANDDd
+# vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica6 {C:/Users/aluno/Desktop/Pratica6/ShiftLeft2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ShiftLeft2
+# 
+# Top level modules:
+# 	ShiftLeft2
+# vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica6 {C:/Users/aluno/Desktop/Pratica6/DataMemory.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# vlog -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica6 {C:/Users/aluno/Desktop/Pratica6/controle.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Controle
+# 
+# Top level modules:
+# 	Controle
+# 

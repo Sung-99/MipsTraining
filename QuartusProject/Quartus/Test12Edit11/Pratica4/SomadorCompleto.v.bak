@@ -1,0 +1,10 @@
+module somadorCompleto #(parameter WIDTH = 16) (
+input wire [WIDTH-1:0] A, // operando A (parametrizável)
+input wire [WIDTH-1:0] B, // operando B (parametrizável)
+input wire SUB, // controle: 0 para soma, 1 para subtração
+input wire SLT, // controle: 1 para operação SLT
+output wire [WIDTH-1:0] S, // resultado (parametrizável)
+output wire C_out, // carry out
+output wire Overflow, // sinal de overflow
+output wire SLT_out // eesultado da operação SLT
+);

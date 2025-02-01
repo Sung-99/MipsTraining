@@ -1,0 +1,297 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\aluno\Desktop\Pratica6\simulation\modelsim
+vALUcontr
+IM[]9igGP6mb>EZ1DV^EWl3
+VlE^iMGTeNnzII^RYP;Fg62
+Z1 dC:\Users\aluno\Desktop\Pratica6\simulation\modelsim
+w1738329977
+8C:/Users/aluno/Desktop/Pratica6/ALUcontr.v
+FC:/Users/aluno/Desktop/Pratica6/ALUcontr.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica6 -O0
+n@a@l@ucontr
+!i10b 1
+!s100 _ZM:KEmc767dZ_GW3A48A1
+!s85 0
+!s108 1738340503.560000
+!s107 C:/Users/aluno/Desktop/Pratica6/ALUcontr.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aluno/Desktop/Pratica6|C:/Users/aluno/Desktop/Pratica6/ALUcontr.v|
+!s101 -O0
+vANDDd
+IccE[1b:H`KzVj6E;n3L6J3
+VZSbZkBl>@NN4L9PYbNImD2
+R1
+w1738328413
+8C:/Users/aluno/Desktop/Pratica6/AND.v
+FC:/Users/aluno/Desktop/Pratica6/AND.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@a@n@d@dd
+!i10b 1
+!s100 z7lS;jL>5@DSUQ0@DjOK90
+!s85 0
+!s108 1738340503.617000
+!s107 C:/Users/aluno/Desktop/Pratica6/AND.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aluno/Desktop/Pratica6|C:/Users/aluno/Desktop/Pratica6/AND.v|
+!s101 -O0
+vControle
+!i10b 1
+!s100 J:ngAmQHzbBV5OZfJ;I4l1
+I<Zzf<nc0m2VXQ^Lgi`cF03
+VnM57EBl>R2X6_KXjC^R?Z3
+R1
+Z5 w1738322123
+8C:/Users/aluno/Desktop/Pratica6/controle.v
+FC:/Users/aluno/Desktop/Pratica6/controle.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1738340503.790000
+!s107 C:/Users/aluno/Desktop/Pratica6/controle.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aluno/Desktop/Pratica6|C:/Users/aluno/Desktop/Pratica6/controle.v|
+!s101 -O0
+R3
+R4
+n@controle
+vDataMemory
+IAIAG:76c<Gi7n@JgUmXlF0
+V@g=F;>UAojj7Q:J35NVJ_0
+R1
+w1738340492
+8C:/Users/aluno/Desktop/Pratica6/DataMemory.v
+FC:/Users/aluno/Desktop/Pratica6/DataMemory.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@data@memory
+!i10b 1
+!s100 ZcQom`3WI90D?3cPWS?7D0
+!s85 0
+!s108 1738340503.728000
+!s107 C:/Users/aluno/Desktop/Pratica6/DataMemory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aluno/Desktop/Pratica6|C:/Users/aluno/Desktop/Pratica6/DataMemory.v|
+!s101 -O0
+vFullAdder1Bit
+I[1;2XPg11=kEUL>W<f14U0
+VURn@^2MW0ldX2TgTBZJH]3
+R1
+Z6 w1738322124
+Z7 8C:/Users/aluno/Desktop/Pratica6/SomadorCompleto.v
+Z8 FC:/Users/aluno/Desktop/Pratica6/SomadorCompleto.v
+L0 39
+R2
+r1
+31
+Z9 !s108 1738340503.307000
+Z10 !s107 C:/Users/aluno/Desktop/Pratica6/SomadorCompleto.v|
+Z11 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aluno/Desktop/Pratica6|C:/Users/aluno/Desktop/Pratica6/SomadorCompleto.v|
+R3
+R4
+n@full@adder1@bit
+!i10b 1
+!s100 `afC;RS5C56Xf9EZNjTR@3
+!s85 0
+!s101 -O0
+vInstructionMemory
+I3@OjS4YDz]<gNA^6:^4`B3
+VH3oU]VEjc3>;4BAfYK_jT2
+R1
+w1738338291
+8C:/Users/aluno/Desktop/Pratica6/InstructionMemory.v
+FC:/Users/aluno/Desktop/Pratica6/InstructionMemory.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@instruction@memory
+!i10b 1
+!s100 ge<mHlXj9A[Yd>3WlC?Y]3
+!s85 0
+!s108 1738340503.383000
+!s107 C:/Users/aluno/Desktop/Pratica6/InstructionMemory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aluno/Desktop/Pratica6|C:/Users/aluno/Desktop/Pratica6/InstructionMemory.v|
+!s101 -O0
+vmicrocpu
+I>WSUDE;l2]ER]c;=]Z^L`1
+Vbj8:M90ER6^efg0IoM7lS1
+R1
+w1738340170
+8C:/Users/aluno/Desktop/Pratica6/microcpu.v
+FC:/Users/aluno/Desktop/Pratica6/microcpu.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 A[g@n>o9?Pg<gWEZFnf^Z2
+!s85 0
+!s108 1738340503.008000
+!s107 C:/Users/aluno/Desktop/Pratica6/microcpu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aluno/Desktop/Pratica6|C:/Users/aluno/Desktop/Pratica6/microcpu.v|
+!s101 -O0
+vMUX
+IlcNXU6^oJIEoZoSEO]^No1
+VYMhMDN0o3a5ZTMDmdNj;j1
+R1
+Z12 w1738322127
+8C:/Users/aluno/Desktop/Pratica6/output_files/MUX.v
+FC:/Users/aluno/Desktop/Pratica6/output_files/MUX.v
+L0 1
+R2
+r1
+31
+R3
+Z13 !s92 -vlog01compat -work work +incdir+C:/Users/aluno/Desktop/Pratica6/output_files -O0
+n@m@u@x
+!i10b 1
+!s100 0R^Lj6aC[z7VLdm<`hR3A1
+!s85 0
+!s108 1738340503.504000
+!s107 C:/Users/aluno/Desktop/Pratica6/output_files/MUX.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aluno/Desktop/Pratica6/output_files|C:/Users/aluno/Desktop/Pratica6/output_files/MUX.v|
+!s101 -O0
+vPC
+I=1NYllGEK8]ebCiM_z[z41
+V=dcBfR2`PY=lMh>zbSLeC2
+R1
+R5
+8C:/Users/aluno/Desktop/Pratica6/PC.v
+FC:/Users/aluno/Desktop/Pratica6/PC.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@p@c
+!i10b 1
+!s100 k71BR;e@>HgWLRWLm;3Dc0
+!s85 0
+!s108 1738340503.232000
+!s107 C:/Users/aluno/Desktop/Pratica6/PC.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aluno/Desktop/Pratica6|C:/Users/aluno/Desktop/Pratica6/PC.v|
+!s101 -O0
+vregistrador
+IWGkJ07W=l=PVX<RoU838a1
+ViE9C=k>1dU7T9QIBLm9Ih1
+R1
+w1738339251
+8C:/Users/aluno/Desktop/Pratica6/registrador.v
+FC:/Users/aluno/Desktop/Pratica6/registrador.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 7hVPa[jNbgUdO7ogKN[o33
+!s85 0
+!s108 1738340503.162000
+!s107 C:/Users/aluno/Desktop/Pratica6/registrador.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aluno/Desktop/Pratica6|C:/Users/aluno/Desktop/Pratica6/registrador.v|
+!s101 -O0
+vShiftLeft2
+IPE9de@]5Y>`1Hk:_]fHSg0
+VCV8R@83bchHMBcbfWNMjL2
+R1
+w1738326081
+8C:/Users/aluno/Desktop/Pratica6/ShiftLeft2.v
+FC:/Users/aluno/Desktop/Pratica6/ShiftLeft2.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@shift@left2
+!i10b 1
+!s100 6^cl[3G_Y7R@623;nA`G>3
+!s85 0
+!s108 1738340503.671000
+!s107 C:/Users/aluno/Desktop/Pratica6/ShiftLeft2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aluno/Desktop/Pratica6|C:/Users/aluno/Desktop/Pratica6/ShiftLeft2.v|
+!s101 -O0
+vSignExtend
+IUSY9Q5E7V[IjLGUJPFCYX1
+VeE4`S3Nok6WEYQBhH`z?:3
+R1
+R12
+8C:/Users/aluno/Desktop/Pratica6/output_files/SignExtend.v
+FC:/Users/aluno/Desktop/Pratica6/output_files/SignExtend.v
+L0 1
+R2
+r1
+31
+R3
+n@sign@extend
+R13
+!i10b 1
+!s100 >z5741Khin6J1l7b@Q<j=0
+!s85 0
+!s108 1738340503.445000
+!s107 C:/Users/aluno/Desktop/Pratica6/output_files/SignExtend.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aluno/Desktop/Pratica6/output_files|C:/Users/aluno/Desktop/Pratica6/output_files/SignExtend.v|
+!s101 -O0
+vSomadorCompleto
+I6]?:If1;1=eYgfY3@LMaX1
+V1GV2m^oX8`aA<C>Fo^i1`1
+R1
+R6
+R7
+R8
+L0 1
+R2
+r1
+31
+R9
+R10
+R11
+R3
+R4
+n@somador@completo
+!i10b 1
+!s100 Ei2>TdizoQ;Vba];UPC4a0
+!s85 0
+!s101 -O0
+vULA
+IbW2cSILPZWZ]jP]2:`ebe0
+VfDZ3TPAabb3846ScMF3JL2
+R1
+w1738324768
+8C:/Users/aluno/Desktop/Pratica6/ULA.v
+FC:/Users/aluno/Desktop/Pratica6/ULA.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@u@l@a
+!i10b 1
+!s100 5D]C[m?DgIV:ak:E_abEg2
+!s85 0
+!s108 1738340503.094000
+!s107 C:/Users/aluno/Desktop/Pratica6/ULA.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/aluno/Desktop/Pratica6|C:/Users/aluno/Desktop/Pratica6/ULA.v|
+!s101 -O0

@@ -1,0 +1,36 @@
+module Controle(opcode, regWrite, aluSRC, aluOp, regDst, branch, memRead, memtoReg, memWrite);
+    input [5:0] opcode;      
+    
+    output regWrite;     
+    output aluSRC;
+	 output regDst;
+	 output branch;
+	 output memRead;
+	 output memtoReg;
+	 output memWrite;
+    output [1:0] aluOp;
+
+	 wire op5, op4, op3, op2, op1, op0;
+    assign {op5, op4, op3, op2, op1, op0} = opcode;
+   
+	  wire tipoR;
+	  wire lw;
+	  wire sw;
+	  wire beq;
+	
+	  assign tipoR = (~op5 & ~op4 & ~op3 & ~op2 & ~op1 & ~op0);
+     assign lw       = ( op5 & ~op4 & ~op3 & ~op2 &  op1 &  op0);
+     assign sw       = ( op5 & ~op4 &  op3 & ~op2 &  op1 &  op0); 
+     assign beq      = (~op5 & ~op4 & ~op3 &  op2 & ~op1 & ~op0);
+	  assign addi     = (~op5 & ~op4 & op3 &  ~op2 & ~op1 & ~op0);
+	  
+	  assign regDst	 = tipoR;          
+     assign aluSRC   = lw | sw | addi;           
+     assign regWrite = tipoR | lw | addi;      
+     assign aluOp    = {tipoR, beq};
+	  assign branch = beq;
+	  assign memRead = lw;
+	  assign memtoReg = lw;
+	  assign memWrite = sw;
+	  
+endmodule

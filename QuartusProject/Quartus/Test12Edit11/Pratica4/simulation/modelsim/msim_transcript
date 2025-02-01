@@ -1,0 +1,269 @@
+# Reading E:/Downloads_Instaladores/Instaladores/ModelSlim/modelsim_ase/tcl/vsim/pref.tcl 
+# do microcpu_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying E:\Downloads_Instaladores\Instaladores\ModelSlim\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied E:\Downloads_Instaladores\Instaladores\ModelSlim\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/vitor/Desktop/Pratica4 {C:/Users/vitor/Desktop/Pratica4/microcpu.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module microcpu
+# 
+# Top level modules:
+# 	microcpu
+# vlog -vlog01compat -work work +incdir+C:/Users/vitor/Desktop/Pratica4 {C:/Users/vitor/Desktop/Pratica4/ULA.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ULA
+# 
+# Top level modules:
+# 	ULA
+# vlog -vlog01compat -work work +incdir+C:/Users/vitor/Desktop/Pratica4 {C:/Users/vitor/Desktop/Pratica4/registrador.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module registrador
+# 
+# Top level modules:
+# 	registrador
+# vlog -vlog01compat -work work +incdir+C:/Users/vitor/Desktop/Pratica4 {C:/Users/vitor/Desktop/Pratica4/PC.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# vlog -vlog01compat -work work +incdir+C:/Users/vitor/Desktop/Pratica4 {C:/Users/vitor/Desktop/Pratica4/SomadorCompleto.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SomadorCompleto
+# -- Compiling module FullAdder1Bit
+# 
+# Top level modules:
+# 	SomadorCompleto
+# vlog -vlog01compat -work work +incdir+C:/Users/vitor/Desktop/Pratica4 {C:/Users/vitor/Desktop/Pratica4/InstructionMemory.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module InstructionMemory
+# 
+# Top level modules:
+# 	InstructionMemory
+# vlog -vlog01compat -work work +incdir+C:/Users/vitor/Desktop/Pratica4/output_files {C:/Users/vitor/Desktop/Pratica4/output_files/SignExtend.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SignExtend
+# 
+# Top level modules:
+# 	SignExtend
+# vlog -vlog01compat -work work +incdir+C:/Users/vitor/Desktop/Pratica4/output_files {C:/Users/vitor/Desktop/Pratica4/output_files/MUX.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module MUX
+# 
+# Top level modules:
+# 	MUX
+# vlog -vlog01compat -work work +incdir+C:/Users/vitor/Desktop/Pratica4/output_files {C:/Users/vitor/Desktop/Pratica4/output_files/ControlUnit.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ControlUnit
+# ** Warning: C:/Users/vitor/Desktop/Pratica4/output_files/ControlUnit.v(40): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# 
+# Top level modules:
+# 	ControlUnit
+# vlog -vlog01compat -work work +incdir+C:/Users/vitor/Desktop/Pratica4 {C:/Users/vitor/Desktop/Pratica4/ALUcontr.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module ALUcontr
+# 
+# Top level modules:
+# 	ALUcontr
+# 
+vsim rtl_work.microcpu
+# vsim rtl_work.microcpu 
+# Loading rtl_work.microcpu
+# Loading rtl_work.SignExtend
+# Loading rtl_work.SomadorCompleto
+# Loading rtl_work.PC
+# Loading rtl_work.InstructionMemory
+# Loading rtl_work.registrador
+# Loading rtl_work.MUX
+# Loading rtl_work.ControlUnit
+# Loading rtl_work.ALUcontr
+# Loading rtl_work.ULA
+# Loading rtl_work.FullAdder1Bit
+# ** Warning: (vsim-3017) C:/Users/vitor/Desktop/Pratica4/microcpu.v(52): [TFMPC] - Too few port connections. Expected 8, found 7.
+# 
+#         Region: /microcpu/adder_inst
+# ** Warning: (vsim-3722) C:/Users/vitor/Desktop/Pratica4/microcpu.v(52): [TFMPC] - Missing connection for port 'SLT_out'.
+# 
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(61): [PCDPC] - Port size (4 or 4) does not match connection size (32) for port 'load_value'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/PC.v(5).
+# 
+#         Region: /microcpu/pc_inst
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(61): [PCDPC] - Port size (4 or 4) does not match connection size (32) for port 'pc_value'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/PC.v(6).
+# 
+#         Region: /microcpu/pc_inst
+# ** Warning: (vsim-3017) C:/Users/vitor/Desktop/Pratica4/microcpu.v(109): [TFMPC] - Too few port connections. Expected 4, found 3.
+# 
+#         Region: /microcpu/controlALU
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(109): [PCDPC] - Port size (7 or 7) does not match connection size (6) for port 'funct7'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/ALUcontr.v(4).
+# 
+#         Region: /microcpu/controlALU
+# ** Warning: (vsim-3722) C:/Users/vitor/Desktop/Pratica4/microcpu.v(109): [TFMPC] - Missing connection for port 'ALUSrc'.
+# 
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(122): [PCDPC] - Port size (16 or 16) does not match connection size (5) for port 'A'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/ULA.v(9).
+# 
+#         Region: /microcpu/alu
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(122): [PCDPC] - Port size (16 or 16) does not match connection size (5) for port 'B'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/ULA.v(9).
+# 
+#         Region: /microcpu/alu
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(122): [PCDPC] - Port size (16 or 16) does not match connection size (32) for port 'Result'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/ULA.v(9).
+# 
+#         Region: /microcpu/alu
+wave create -driver freeze -pattern constant -value 1zzzzzzzzzzzzzzzzz -range 17 0 -starttime 0ps -endtime 1000ps sim:/microcpu/SW
+add wave -position end  sim:/microcpu/HEX7
+add wave -position end  sim:/microcpu/HEX6
+add wave -position end  sim:/microcpu/HEX2
+add wave -position end  sim:/microcpu/HEX1
+add wave -position end  sim:/microcpu/HEX0
+# Load canceled
+run
+vsim work.microcpu
+# vsim work.microcpu 
+# Loading work.microcpu
+# Loading work.SignExtend
+# Loading work.SomadorCompleto
+# Loading work.PC
+# Loading work.InstructionMemory
+# Loading work.registrador
+# Loading work.MUX
+# Loading work.ControlUnit
+# Loading work.ALUcontr
+# Loading work.ULA
+# Loading work.FullAdder1Bit
+# ** Warning: (vsim-3017) C:/Users/vitor/Desktop/Pratica4/microcpu.v(52): [TFMPC] - Too few port connections. Expected 8, found 7.
+# 
+#         Region: /microcpu/adder_inst
+# ** Warning: (vsim-3722) C:/Users/vitor/Desktop/Pratica4/microcpu.v(52): [TFMPC] - Missing connection for port 'SLT_out'.
+# 
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(61): [PCDPC] - Port size (4 or 4) does not match connection size (32) for port 'load_value'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/PC.v(5).
+# 
+#         Region: /microcpu/pc_inst
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(61): [PCDPC] - Port size (4 or 4) does not match connection size (32) for port 'pc_value'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/PC.v(6).
+# 
+#         Region: /microcpu/pc_inst
+# ** Warning: (vsim-3017) C:/Users/vitor/Desktop/Pratica4/microcpu.v(109): [TFMPC] - Too few port connections. Expected 4, found 3.
+# 
+#         Region: /microcpu/controlALU
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(109): [PCDPC] - Port size (7 or 7) does not match connection size (6) for port 'funct7'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/ALUcontr.v(4).
+# 
+#         Region: /microcpu/controlALU
+# ** Warning: (vsim-3722) C:/Users/vitor/Desktop/Pratica4/microcpu.v(109): [TFMPC] - Missing connection for port 'ALUSrc'.
+# 
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(122): [PCDPC] - Port size (16 or 16) does not match connection size (5) for port 'A'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/ULA.v(9).
+# 
+#         Region: /microcpu/alu
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(122): [PCDPC] - Port size (16 or 16) does not match connection size (5) for port 'B'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/ULA.v(9).
+# 
+#         Region: /microcpu/alu
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(122): [PCDPC] - Port size (16 or 16) does not match connection size (32) for port 'Result'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/ULA.v(9).
+# 
+#         Region: /microcpu/alu
+add wave -position insertpoint  \
+sim:/microcpu/SW
+add wave -position end  sim:/microcpu/HEX7
+add wave -position end  sim:/microcpu/HEX6
+add wave -position end  sim:/microcpu/HEX2
+add wave -position end  sim:/microcpu/HEX1
+add wave -position end  sim:/microcpu/HEX0
+wave create -driver freeze -pattern constant -value 1zzzzzzzzzzzzzzzzz -range 17 0 -starttime 0ps -endtime 1000ps sim:/microcpu/SW
+run
+wave modify -driver freeze -pattern constant -value 0zzzzzzzzzzzzzzzzz -range 17 0 -starttime 1000ps -endtime 2000ps Edit:/microcpu/SW
+run
+run
+run
+wave modify -driver freeze -pattern constant -value 1zzzzzzzzzzzzzzzzz -range 17 0 -starttime 2000ps -endtime 3000ps Edit:/microcpu/SW
+run
+run
+restart -f
+# ** Warning: (vsim-3017) C:/Users/vitor/Desktop/Pratica4/microcpu.v(52): [TFMPC] - Too few port connections. Expected 8, found 7.
+# 
+#         Region: /microcpu/adder_inst
+# ** Warning: (vsim-3722) C:/Users/vitor/Desktop/Pratica4/microcpu.v(52): [TFMPC] - Missing connection for port 'SLT_out'.
+# 
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(61): [PCDPC] - Port size (4 or 4) does not match connection size (32) for port 'load_value'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/PC.v(5).
+# 
+#         Region: /microcpu/pc_inst
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(61): [PCDPC] - Port size (4 or 4) does not match connection size (32) for port 'pc_value'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/PC.v(6).
+# 
+#         Region: /microcpu/pc_inst
+# ** Warning: (vsim-3017) C:/Users/vitor/Desktop/Pratica4/microcpu.v(109): [TFMPC] - Too few port connections. Expected 4, found 3.
+# 
+#         Region: /microcpu/controlALU
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(109): [PCDPC] - Port size (7 or 7) does not match connection size (6) for port 'funct7'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/ALUcontr.v(4).
+# 
+#         Region: /microcpu/controlALU
+# ** Warning: (vsim-3722) C:/Users/vitor/Desktop/Pratica4/microcpu.v(109): [TFMPC] - Missing connection for port 'ALUSrc'.
+# 
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(122): [PCDPC] - Port size (16 or 16) does not match connection size (5) for port 'A'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/ULA.v(9).
+# 
+#         Region: /microcpu/alu
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(122): [PCDPC] - Port size (16 or 16) does not match connection size (5) for port 'B'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/ULA.v(9).
+# 
+#         Region: /microcpu/alu
+# ** Warning: (vsim-3015) C:/Users/vitor/Desktop/Pratica4/microcpu.v(122): [PCDPC] - Port size (16 or 16) does not match connection size (32) for port 'Result'. The port definition is at: C:/Users/vitor/Desktop/Pratica4/ULA.v(9).
+# 
+#         Region: /microcpu/alu
+wave modify -driver freeze -pattern constant -value 0zzzzzzzzzzzzzzzzz -range 17 0 -starttime 2000ps -endtime 3000ps Edit:/microcpu/SW
+run
+vsim work.PC
+# vsim work.PC 
+# Loading work.PC
+add wave -position insertpoint  \
+sim:/PC/pc_value
+add wave -position end  sim:/PC/load_value
+add wave -position end  sim:/PC/clk
+wave create -driver freeze -pattern clock -initialvalue HiZ -period 100ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/PC/clk
+# microcpu
+add wave -position end  sim:/PC/reset
+wave create -driver freeze -pattern constant -value 1 -starttime 0ps -endtime 1000ps sim:/PC/reset
+# microcpu
+vsim work.ULA
+# vsim work.ULA 
+# Loading work.ULA
+# Loading work.SomadorCompleto
+# Loading work.FullAdder1Bit
+add wave -position end  sim:/ULA/ArithResult
+add wave -position end  sim:/ULA/AndResult
+add wave -position end  sim:/ULA/A
+add wave -position end  sim:/ULA/B
+add wave -position end  sim:/ULA/Result
+add wave -position end  sim:/ULA/clock
+wave create -driver freeze -pattern constant -value 100zzzzzzzzzzzzz -range 15 0 -starttime 0ps -endtime 1000ps sim:/ULA/A
+# PC
+wave create -driver freeze -pattern constant -value 100zzzzzzzzzzzzz -range 15 0 -starttime 0ps -endtime 1000ps sim:/ULA/B
+# PC
+wave create -driver freeze -pattern clock -initialvalue HiZ -period 100ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/ULA/clock
+# PC
+wave create -pattern constant -value xxxxxxxxxxxxxxxx -range 15 0 -starttime 0ps -endtime 1000ps sim:/ULA/ArithResult
+# PC
+wave create -driver freeze -pattern constant -value 101 -range 2 0 -starttime 0ps -endtime 1000ps sim:/ULA/ALUControl
+# PC
+run
+vsim work.ULA
+# vsim work.ULA 
+# Loading work.ULA
+# Loading work.SomadorCompleto
+# Loading work.FullAdder1Bit
+add wave -position end  sim:/ULA/clock
+add wave -position end  sim:/ULA/Result
+add wave -position end  sim:/ULA/OrResult
+add wave -position end  sim:/ULA/A
+add wave -position end  sim:/ULA/B
+add wave -position end  sim:/ULA/ArithResult
+add wave -position end  sim:/ULA/AndResult
+add wave -position end  sim:/ULA/ALUControl
+wave create -driver freeze -pattern constant -value 010 -range 2 0 -starttime 0ps -endtime 1000ps sim:/ULA/ALUControl
+# ULA
+wave create -driver freeze -pattern constant -value 100zzzzzzzzzzzzz -range 15 0 -starttime 0ps -endtime 1000ps sim:/ULA/A
+# ULA
+wave create -driver freeze -pattern constant -value 100zzzzzzzzzzzzz -range 15 0 -starttime 0ps -endtime 1000ps sim:/ULA/B
+# ULA
+wave create -driver freeze -pattern clock -initialvalue HiZ -period 100ps -dutycycle 50 -starttime 0ps -endtime 1000ps sim:/ULA/clock
+# ULA
+run

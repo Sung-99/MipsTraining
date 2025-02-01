@@ -1,0 +1,31 @@
+module InstructionMemory (
+    input wire clk,                // Clock signal
+    input wire MemRead,            // Control signal for reading
+    input wire MemWrite,           // Control signal for writing
+    input wire [3:0] address,      // Address to read/write
+    input wire [7:0] write_data,   // Data to write, 8 bits
+    output reg [7:0] read_data     // Read data output
+);
+
+    // Define a small instruction memory
+    reg [7:0] memory [0:15]; // 16 x 8 bits memory
+
+    // Initialize some instructions
+    initial begin
+        memory[0] = 8'b00000001; // Example instruction 1
+        memory[1] = 8'b00000010; // Example instruction 2
+        memory[2] = 8'b00000011; // Example instruction 3
+        memory[3] = 8'b00000100; // Example instruction 4
+        // Add more instructions as needed
+    end
+
+    always @(posedge clk) begin
+        if (MemWrite) begin
+            memory[address] <= write_data; // Write data to memory location
+        end
+        if (MemRead) begin
+            read_data <= memory[address];    // Read data from memory location
+        end
+    end
+
+endmodule
