@@ -1,0 +1,27 @@
+module DataMemory (
+    input [31:0] address,     // Address for read/write operations
+    input [31:0] write_data,  // Data to be written
+    input MemRead,            // Control signal for read operation
+    input MemWrite,           // Control signal for write operation
+    output reg [31:0] read_data // Data read from memory
+);
+
+    // Define a memory array (e.g., 256 words of 32 bits each)
+    reg [31:0] memory [0:255];
+
+    always @(*) begin
+        if (MemRead) begin
+            read_data = memory[address[31:2]]; // Read data from memory
+        end
+        else begin
+            read_data = 32'b0; // Default read data if not reading
+        end
+    end
+
+    always @(posedge MemWrite) begin
+        if (MemWrite) begin
+            memory[address[31:2]] = write_data; // Write data to memory
+        end
+    end
+
+endmodule

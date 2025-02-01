@@ -1,0 +1,47 @@
+module ALUcontr (
+    input [5:0] opcode,          // Opcode from the instruction
+    input [2:0] funct3,          // Function code for the operation
+    input [6:0] funct7,          // Additional function code (if needed)
+    output reg [2:0] ALUControl, // ALU control signal
+    output reg ALUSrc            // ALUSrc signal (optional)
+);
+
+    always @(*) begin
+        // Default values
+        ALUControl = 3'b000; // Default to zero or no operation
+        ALUSrc = 0;          // Default ALUSrc
+
+        case (opcode)
+            6'b000000: begin // R-type instructions
+                ALUSrc = 0; // Use register values
+                case (funct3)
+                    3'b000: ALUControl = 3'b010; // ADD
+                    3'b001: ALUControl = 3'b110; // SUB
+                    3'b010: ALUControl = 3'b000; // AND
+                    3'b011: ALUControl = 3'b001; // OR
+                    // Add more funct3 cases as needed
+                    default: ALUControl = 3'bxxx; // Undefined operation
+                endcase
+            end
+            
+            6'b0010011: begin // I-type operations (e.g., ADDI)
+                ALUSrc = 1; // Use immediate value
+                ALUControl = 3'b010; // ADD
+            end
+            
+            6'b000011: begin // LW
+                ALUSrc = 1; // Use immediate value for address
+                ALUControl = 3'b010; // ADD for address calculation
+            end
+            
+            6'b0100011: begin // SW
+                ALUSrc = 1; // Use immediate value for address
+                ALUControl = 3'b010; // ADD for address calculation
+            end
+            
+            default: begin
+                ALUControl = 3'bxxx; // Undefined operation
+            end
+        endcase
+    end
+endmodule

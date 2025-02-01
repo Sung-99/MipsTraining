@@ -1,0 +1,1801 @@
+Analysis & Synthesis report for microcpu
+Thu Jan 30 10:24:18 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: SomadorCompleto:adder_inst
+ 12. Parameter Settings for User Entity Instance: registrador:reg_bank
+ 13. Parameter Settings for User Entity Instance: ULA:alu
+ 14. Port Connectivity Checks: "ULA:alu"
+ 15. Port Connectivity Checks: "ALUcontr:controlALU"
+ 16. Port Connectivity Checks: "MUX:mux2"
+ 17. Port Connectivity Checks: "registrador:reg_bank"
+ 18. Port Connectivity Checks: "MUX:mux"
+ 19. Port Connectivity Checks: "Controle:control_unit"
+ 20. Port Connectivity Checks: "InstructionMemory:im_inst"
+ 21. Port Connectivity Checks: "PC:pc_inst"
+ 22. Port Connectivity Checks: "SomadorCompleto:adder_inst"
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jan 30 10:24:18 2025           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; microcpu                                        ;
+; Top-level Entity Name              ; microcpu                                        ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 58                                              ;
+;     Total combinational functions  ; 58                                              ;
+;     Dedicated logic registers      ; 8                                               ;
+; Total registers                    ; 8                                               ;
+; Total pins                         ; 67                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; microcpu           ; microcpu           ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                              ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
+; microcpu.v                       ; yes             ; User Verilog HDL File        ; C:/Users/aluno/Desktop/Pratica4/microcpu.v                ;         ;
+; ULA.v                            ; yes             ; User Verilog HDL File        ; C:/Users/aluno/Desktop/Pratica4/ULA.v                     ;         ;
+; registrador.v                    ; yes             ; User Verilog HDL File        ; C:/Users/aluno/Desktop/Pratica4/registrador.v             ;         ;
+; PC.v                             ; yes             ; User Verilog HDL File        ; C:/Users/aluno/Desktop/Pratica4/PC.v                      ;         ;
+; SomadorCompleto.v                ; yes             ; User Verilog HDL File        ; C:/Users/aluno/Desktop/Pratica4/SomadorCompleto.v         ;         ;
+; InstructionMemory.v              ; yes             ; User Verilog HDL File        ; C:/Users/aluno/Desktop/Pratica4/InstructionMemory.v       ;         ;
+; output_files/SignExtend.v        ; yes             ; User Verilog HDL File        ; C:/Users/aluno/Desktop/Pratica4/output_files/SignExtend.v ;         ;
+; output_files/MUX.v               ; yes             ; User Verilog HDL File        ; C:/Users/aluno/Desktop/Pratica4/output_files/MUX.v        ;         ;
+; ALUcontr.v                       ; yes             ; User Verilog HDL File        ; C:/Users/aluno/Desktop/Pratica4/ALUcontr.v                ;         ;
+; controle.v                       ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/aluno/Desktop/Pratica4/controle.v                ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                          ;
++---------------------------------------------+------------------------+
+; Resource                                    ; Usage                  ;
++---------------------------------------------+------------------------+
+; Estimated Total logic elements              ; 58                     ;
+;                                             ;                        ;
+; Total combinational functions               ; 58                     ;
+; Logic element usage by number of LUT inputs ;                        ;
+;     -- 4 input functions                    ; 27                     ;
+;     -- 3 input functions                    ; 19                     ;
+;     -- <=2 input functions                  ; 12                     ;
+;                                             ;                        ;
+; Logic elements by mode                      ;                        ;
+;     -- normal mode                          ; 48                     ;
+;     -- arithmetic mode                      ; 10                     ;
+;                                             ;                        ;
+; Total registers                             ; 8                      ;
+;     -- Dedicated logic registers            ; 8                      ;
+;     -- I/O registers                        ; 0                      ;
+;                                             ;                        ;
+; I/O pins                                    ; 67                     ;
+; Embedded Multiplier 9-bit elements          ; 0                      ;
+; Maximum fan-out node                        ; PC:pc_inst|pc_value[3] ;
+; Maximum fan-out                             ; 37                     ;
+; Total fan-out                               ; 252                    ;
+; Average fan-out                             ; 1.89                   ;
++---------------------------------------------+------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
+; |microcpu                  ; 58 (33)           ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |microcpu                      ; work         ;
+;    |PC:pc_inst|            ; 1 (1)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |microcpu|PC:pc_inst           ; work         ;
+;    |ULA:alu|               ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |microcpu|ULA:alu              ; work         ;
+;    |registrador:reg_bank|  ; 6 (6)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |microcpu|registrador:reg_bank ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                ;
++------------------------------------------+----------------------------------------+
+; Register name                            ; Reason for Removal                     ;
++------------------------------------------+----------------------------------------+
+; PC:pc_inst|pc_value[0]                   ; Merged with PC:pc_inst|pc_value[1]     ;
+; PC:pc_inst|pc_value[1]                   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~6     ; Lost fanout                            ;
+; registrador:reg_bank|registradores~7     ; Lost fanout                            ;
+; registrador:reg_bank|registradores~8     ; Lost fanout                            ;
+; registrador:reg_bank|registradores~9     ; Lost fanout                            ;
+; registrador:reg_bank|registradores~10    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~11    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~12    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~13    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~14    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~15    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~16    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~17    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~18    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~19    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~20    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~21    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~22    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~23    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~24    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~25    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~26    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~27    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~28    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~29    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~30    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~31    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~38    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~39    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~40    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~41    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~42    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~43    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~44    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~45    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~46    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~47    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~48    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~49    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~50    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~51    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~52    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~53    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~54    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~55    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~56    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~57    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~58    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~59    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~60    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~61    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~62    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~63    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~70    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~71    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~72    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~73    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~74    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~75    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~76    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~77    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~78    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~79    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~80    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~81    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~82    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~83    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~84    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~85    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~86    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~87    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~88    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~89    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~90    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~91    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~92    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~93    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~94    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~95    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~102   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~103   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~104   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~105   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~106   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~107   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~108   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~109   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~110   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~111   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~112   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~113   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~114   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~115   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~116   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~117   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~118   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~119   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~120   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~121   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~122   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~123   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~124   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~125   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~126   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~127   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~134   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~135   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~136   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~137   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~138   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~139   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~140   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~141   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~142   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~143   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~144   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~145   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~146   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~147   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~148   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~149   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~150   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~151   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~152   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~153   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~154   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~155   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~156   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~157   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~158   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~159   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~166   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~167   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~168   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~169   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~170   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~171   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~172   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~173   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~174   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~175   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~176   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~177   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~178   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~179   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~180   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~181   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~182   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~183   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~184   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~185   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~186   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~187   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~188   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~189   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~190   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~191   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~198   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~199   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~200   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~201   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~202   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~203   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~204   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~205   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~206   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~207   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~208   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~209   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~210   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~211   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~212   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~213   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~214   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~215   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~216   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~217   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~218   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~219   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~220   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~221   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~222   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~223   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~230   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~231   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~232   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~233   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~234   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~235   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~236   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~237   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~238   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~239   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~240   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~241   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~242   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~243   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~244   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~245   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~246   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~247   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~248   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~249   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~250   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~251   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~252   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~253   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~254   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~255   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~256   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~257   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~258   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~259   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~260   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~261   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~262   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~263   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~264   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~265   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~266   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~267   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~268   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~269   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~270   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~271   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~272   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~273   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~274   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~275   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~276   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~277   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~278   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~279   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~280   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~281   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~282   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~283   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~284   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~285   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~286   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~287   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~288   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~289   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~290   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~291   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~292   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~293   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~294   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~295   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~296   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~297   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~298   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~299   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~300   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~301   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~302   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~303   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~304   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~305   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~306   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~307   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~308   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~309   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~310   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~311   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~312   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~313   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~314   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~315   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~316   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~317   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~318   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~319   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~320   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~321   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~322   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~323   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~324   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~325   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~326   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~327   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~328   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~329   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~330   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~331   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~332   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~333   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~334   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~335   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~336   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~337   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~338   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~339   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~340   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~341   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~342   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~343   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~344   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~345   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~346   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~347   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~348   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~349   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~350   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~351   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~352   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~353   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~354   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~355   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~356   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~357   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~358   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~359   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~360   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~361   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~362   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~363   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~364   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~365   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~366   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~367   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~368   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~369   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~370   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~371   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~372   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~373   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~374   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~375   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~376   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~377   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~378   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~379   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~380   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~381   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~382   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~383   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~384   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~385   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~386   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~387   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~388   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~389   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~390   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~391   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~392   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~393   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~394   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~395   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~396   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~397   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~398   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~399   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~400   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~401   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~402   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~403   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~404   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~405   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~406   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~407   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~408   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~409   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~410   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~411   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~412   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~413   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~414   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~415   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~416   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~417   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~418   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~419   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~420   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~421   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~422   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~423   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~424   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~425   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~426   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~427   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~428   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~429   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~430   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~431   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~432   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~433   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~434   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~435   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~436   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~437   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~438   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~439   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~440   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~441   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~442   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~443   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~444   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~445   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~446   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~447   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~448   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~449   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~450   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~451   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~452   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~453   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~454   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~455   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~456   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~457   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~458   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~459   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~460   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~461   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~462   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~463   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~464   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~465   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~466   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~467   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~468   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~469   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~470   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~471   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~472   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~473   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~474   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~475   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~476   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~477   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~478   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~479   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~480   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~481   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~482   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~483   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~484   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~485   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~486   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~487   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~488   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~489   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~490   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~491   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~492   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~493   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~494   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~495   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~496   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~497   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~498   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~499   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~500   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~501   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~502   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~503   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~504   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~505   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~506   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~507   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~508   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~509   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~510   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~511   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~512   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~513   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~514   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~515   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~516   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~517   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~518   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~519   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~520   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~521   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~522   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~523   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~524   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~525   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~526   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~527   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~528   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~529   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~530   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~531   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~532   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~533   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~534   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~535   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~536   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~537   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~538   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~539   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~540   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~541   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~542   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~543   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~544   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~545   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~546   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~547   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~548   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~549   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~550   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~551   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~552   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~553   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~554   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~555   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~556   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~557   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~558   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~559   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~560   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~561   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~562   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~563   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~564   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~565   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~566   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~567   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~568   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~569   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~570   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~571   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~572   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~573   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~574   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~575   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~576   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~577   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~578   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~579   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~580   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~581   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~582   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~583   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~584   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~585   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~586   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~587   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~588   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~589   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~590   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~591   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~592   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~593   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~594   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~595   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~596   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~597   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~598   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~599   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~600   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~601   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~602   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~603   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~604   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~605   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~606   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~607   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~608   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~609   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~610   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~611   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~612   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~613   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~614   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~615   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~616   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~617   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~618   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~619   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~620   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~621   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~622   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~623   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~624   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~625   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~626   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~627   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~628   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~629   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~630   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~631   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~632   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~633   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~634   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~635   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~636   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~637   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~638   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~639   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~640   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~641   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~642   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~643   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~644   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~645   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~646   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~647   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~648   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~649   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~650   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~651   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~652   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~653   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~654   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~655   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~656   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~657   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~658   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~659   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~660   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~661   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~662   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~663   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~664   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~665   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~666   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~667   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~668   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~669   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~670   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~671   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~672   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~673   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~674   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~675   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~676   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~677   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~678   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~679   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~680   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~681   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~682   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~683   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~684   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~685   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~686   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~687   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~688   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~689   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~690   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~691   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~692   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~693   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~694   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~695   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~696   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~697   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~698   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~699   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~700   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~701   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~702   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~703   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~704   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~705   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~706   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~707   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~708   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~709   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~710   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~711   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~712   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~713   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~714   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~715   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~716   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~717   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~718   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~719   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~720   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~721   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~722   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~723   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~724   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~725   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~726   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~727   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~728   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~729   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~730   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~731   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~732   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~733   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~734   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~735   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~736   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~737   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~738   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~739   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~740   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~741   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~742   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~743   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~744   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~745   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~746   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~747   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~748   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~749   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~750   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~751   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~752   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~753   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~754   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~755   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~756   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~757   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~758   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~759   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~760   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~761   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~762   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~763   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~764   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~765   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~766   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~767   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~768   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~769   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~770   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~771   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~772   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~773   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~774   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~775   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~776   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~777   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~778   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~779   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~780   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~781   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~782   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~783   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~784   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~785   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~786   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~787   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~788   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~789   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~790   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~791   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~792   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~793   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~794   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~795   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~796   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~797   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~798   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~799   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~800   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~801   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~802   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~803   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~804   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~805   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~806   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~807   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~808   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~809   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~810   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~811   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~812   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~813   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~814   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~815   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~816   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~817   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~818   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~819   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~820   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~821   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~822   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~823   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~824   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~825   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~826   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~827   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~828   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~829   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~830   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~831   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~832   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~833   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~834   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~835   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~836   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~837   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~838   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~839   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~840   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~841   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~842   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~843   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~844   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~845   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~846   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~847   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~848   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~849   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~850   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~851   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~852   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~853   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~854   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~855   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~856   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~857   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~858   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~859   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~860   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~861   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~862   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~863   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~864   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~865   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~866   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~867   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~868   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~869   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~870   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~871   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~872   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~873   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~874   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~875   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~876   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~877   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~878   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~879   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~880   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~881   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~882   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~883   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~884   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~885   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~886   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~887   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~888   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~889   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~890   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~891   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~892   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~893   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~894   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~895   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~896   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~897   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~898   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~899   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~900   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~901   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~902   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~903   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~904   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~905   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~906   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~907   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~908   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~909   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~910   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~911   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~912   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~913   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~914   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~915   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~916   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~917   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~918   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~919   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~920   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~921   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~922   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~923   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~924   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~925   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~926   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~927   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~928   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~929   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~930   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~931   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~932   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~933   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~934   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~935   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~936   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~937   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~938   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~939   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~940   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~941   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~942   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~943   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~944   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~945   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~946   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~947   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~948   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~949   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~950   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~951   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~952   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~953   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~954   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~955   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~956   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~957   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~958   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~959   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~960   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~961   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~962   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~963   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~964   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~965   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~966   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~967   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~968   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~969   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~970   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~971   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~972   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~973   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~974   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~975   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~976   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~977   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~978   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~979   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~980   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~981   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~982   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~983   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~984   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~985   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~986   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~987   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~988   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~989   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~990   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~991   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~992   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~993   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~994   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~995   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~996   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~997   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~998   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~999   ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1000  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1001  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1002  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1003  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1004  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1005  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1006  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1007  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1008  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1009  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1010  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1011  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1012  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1013  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1014  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1015  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1016  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1017  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1018  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1019  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1020  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1021  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1022  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~1023  ; Lost fanout                            ;
+; registrador:reg_bank|registradores~192   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~224   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~64    ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~193   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~225   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~65    ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~194   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~226   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~66    ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~195   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~227   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~67    ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~196   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~228   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~68    ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~0     ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~160   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~128   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~1     ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~161   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~129   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~2     ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~162   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~130   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~3     ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~163   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~131   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~4     ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~164   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~132   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~69    ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~5     ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~229   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~197   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~165   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~133   ; Stuck at GND due to stuck port data_in ;
+; registrador:reg_bank|registradores~32    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~34    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~36    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~35    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~37    ; Lost fanout                            ;
+; registrador:reg_bank|registradores~33    ; Lost fanout                            ;
+; Total Number of Removed Registers = 1020 ;                                        ;
++------------------------------------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                 ;
++----------------------------------------+---------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal        ; Registers Removed due to This Register ;
++----------------------------------------+---------------------------+----------------------------------------+
+; registrador:reg_bank|registradores~193 ; Stuck at GND              ; registrador:reg_bank|registradores~33  ;
+;                                        ; due to stuck port data_in ;                                        ;
+; registrador:reg_bank|registradores~194 ; Stuck at GND              ; registrador:reg_bank|registradores~34  ;
+;                                        ; due to stuck port data_in ;                                        ;
+; registrador:reg_bank|registradores~195 ; Stuck at GND              ; registrador:reg_bank|registradores~35  ;
+;                                        ; due to stuck port data_in ;                                        ;
+; registrador:reg_bank|registradores~196 ; Stuck at GND              ; registrador:reg_bank|registradores~36  ;
+;                                        ; due to stuck port data_in ;                                        ;
+; registrador:reg_bank|registradores~69  ; Stuck at GND              ; registrador:reg_bank|registradores~37  ;
+;                                        ; due to stuck port data_in ;                                        ;
++----------------------------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 8     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 2     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 6     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SomadorCompleto:adder_inst ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registrador:reg_bank ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULA:alu ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; AND            ; 0000  ; Unsigned Binary             ;
+; OR             ; 0001  ; Unsigned Binary             ;
+; ADD            ; 0010  ; Unsigned Binary             ;
+; SUB            ; 0110  ; Unsigned Binary             ;
+; SLT            ; 0111  ; Unsigned Binary             ;
+; NOR            ; 1100  ; Unsigned Binary             ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ULA:alu"                                                                                                                                                 ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                            ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; A          ; Input  ; Warning  ; Input port expression (6 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "A[31..6]" will be connected to GND.        ;
+; B          ; Input  ; Warning  ; Input port expression (6 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "B[31..6]" will be connected to GND.        ;
+; ALUControl ; Input  ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "ALUControl[3..3]" will be connected to GND. ;
+; Zero       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALUcontr:controlALU"                                                                                                                                                               ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                                          ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ALUOp  ; Input  ; Warning  ; Input port expression (3 bits) is wider than the input port (2 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; ALUSrc ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                         ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MUX:mux2"                                                                                                                                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (6 bits) is smaller than the port expression (32 bits) it drives.  The 26 most-significant bit(s) in the port expression will be connected to GND. ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "registrador:reg_bank"                                                                                                                                                                      ;
++--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                                                                                            ;
++--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; WriteReg     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; Data1[31..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MUX:mux"                                                                                                                                                                  ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                                                                                 ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; in0    ; Input  ; Warning  ; Input port expression (5 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in0[31..5]" will be connected to GND.                           ;
+; in1    ; Input  ; Warning  ; Input port expression (5 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in1[31..5]" will be connected to GND.                           ;
+; out    ; Output ; Warning  ; Output or bidir port (6 bits) is smaller than the port expression (32 bits) it drives.  The 26 most-significant bit(s) in the port expression will be connected to GND. ;
+; out[5] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
++--------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Controle:control_unit"                                                                                                                                                    ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                                                               ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ALUOp    ; Output ; Warning  ; Output or bidir port (2 bits) is smaller than the port expression (3 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
+; MemWrite ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; MemRead  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; branch   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; memtoReg ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "InstructionMemory:im_inst" ;
++------------+-------+----------+-----------------------+
+; Port       ; Type  ; Severity ; Details               ;
++------------+-------+----------+-----------------------+
+; MemRead    ; Input ; Info     ; Stuck at VCC          ;
+; MemWrite   ; Input ; Info     ; Stuck at GND          ;
+; write_data ; Input ; Info     ; Stuck at GND          ;
++------------+-------+----------+-----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PC:pc_inst"                                                                                                                                                                              ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; load_value ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; pc_value   ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (32 bits) it drives.  The 28 most-significant bit(s) in the port expression will be connected to GND.            ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SomadorCompleto:adder_inst"                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; B[31..3] ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; B[1..0]  ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; B[2]     ; Input  ; Info     ; Stuck at VCC                                                                                             ;
+; SUB      ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; SLT      ; Input  ; Info     ; Stuck at GND                                                                                             ;
+; S[31..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; C_out    ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; Overflow ; Output ; Info     ; Explicitly unconnected                                                                                   ;
+; SLT_out  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Jan 30 10:24:16 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off microcpu -c microcpu
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (10275): Verilog HDL Module Instantiation warning at microcpu.v(138): ignored dangling comma in List of Port Connections
+Info (12021): Found 1 design units, including 1 entities, in source file microcpu.v
+    Info (12023): Found entity 1: microcpu
+Info (12021): Found 1 design units, including 1 entities, in source file ula.v
+    Info (12023): Found entity 1: ULA
+Info (12021): Found 1 design units, including 1 entities, in source file registrador.v
+    Info (12023): Found entity 1: registrador
+Info (12021): Found 1 design units, including 1 entities, in source file pc.v
+    Info (12023): Found entity 1: PC
+Info (12021): Found 2 design units, including 2 entities, in source file somadorcompleto.v
+    Info (12023): Found entity 1: SomadorCompleto
+    Info (12023): Found entity 2: FullAdder1Bit
+Info (12021): Found 1 design units, including 1 entities, in source file instructionmemory.v
+    Info (12023): Found entity 1: InstructionMemory
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/signextend.v
+    Info (12023): Found entity 1: SignExtend
+Warning (12090): Entity "MUX" obtained from "output_files/MUX.v" instead of from Quartus II megafunction library
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/mux.v
+    Info (12023): Found entity 1: MUX
+Info (12021): Found 0 design units, including 0 entities, in source file output_files/alucontr.v
+Info (12021): Found 1 design units, including 1 entities, in source file alucontr.v
+    Info (12023): Found entity 1: ALUcontr
+Warning (12019): Can't analyze file -- file Pratica4/output_files/ControlUnit.v is missing
+Warning (10236): Verilog HDL Implicit Net warning at microcpu.v(77): created implicit net for "MemWrite"
+Warning (10222): Verilog HDL Parameter Declaration warning at registrador.v(15): Parameter Declaration in module "registrador" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at registrador.v(16): Parameter Declaration in module "registrador" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Info (12127): Elaborating entity "microcpu" for the top level hierarchy
+Info (12128): Elaborating entity "SomadorCompleto" for hierarchy "SomadorCompleto:adder_inst"
+Info (12128): Elaborating entity "FullAdder1Bit" for hierarchy "SomadorCompleto:adder_inst|FullAdder1Bit:adder_bits[0].adder"
+Info (12128): Elaborating entity "PC" for hierarchy "PC:pc_inst"
+Warning (10230): Verilog HDL assignment warning at PC.v(17): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "InstructionMemory" for hierarchy "InstructionMemory:im_inst"
+Warning (10030): Net "memory.data_a" at InstructionMemory.v(11) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "memory.waddr_a" at InstructionMemory.v(11) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "memory.we_a" at InstructionMemory.v(11) has no driver or initial value, using a default initial value '0'
+Warning (12125): Using design file controle.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Controle
+Warning (10236): Verilog HDL Implicit Net warning at controle.v(25): created implicit net for "addi"
+Info (12128): Elaborating entity "Controle" for hierarchy "Controle:control_unit"
+Info (12128): Elaborating entity "MUX" for hierarchy "MUX:mux"
+Warning (10230): Verilog HDL assignment warning at MUX.v(7): truncated value with size 32 to match size of target (6)
+Info (12128): Elaborating entity "registrador" for hierarchy "registrador:reg_bank"
+Warning (10240): Verilog HDL Always Construct warning at registrador.v(44): inferring latch(es) for variable "Data1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at registrador.v(44): inferring latch(es) for variable "Data2", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "Data2[0]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[1]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[2]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[3]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[4]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[5]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[6]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[7]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[8]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[9]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[10]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[11]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[12]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[13]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[14]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[15]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[16]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[17]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[18]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[19]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[20]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[21]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[22]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[23]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[24]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[25]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[26]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[27]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[28]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[29]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[30]" at registrador.v(48)
+Info (10041): Inferred latch for "Data2[31]" at registrador.v(48)
+Info (10041): Inferred latch for "Data1[0]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[1]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[2]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[3]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[4]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[5]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[6]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[7]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[8]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[9]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[10]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[11]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[12]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[13]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[14]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[15]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[16]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[17]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[18]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[19]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[20]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[21]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[22]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[23]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[24]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[25]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[26]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[27]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[28]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[29]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[30]" at registrador.v(44)
+Info (10041): Inferred latch for "Data1[31]" at registrador.v(44)
+Info (12128): Elaborating entity "SignExtend" for hierarchy "SignExtend:sign_ext"
+Info (12128): Elaborating entity "ALUcontr" for hierarchy "ALUcontr:controlALU"
+Warning (10270): Verilog HDL Case Statement warning at ALUcontr.v(15): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at ALUcontr.v(15): inferring latch(es) for variable "ALUControl", which holds its previous value in one or more paths through the always construct
+Warning (10034): Output port "ALUSrc" at ALUcontr.v(8) has no driver
+Info (10041): Inferred latch for "ALUControl[0]" at ALUcontr.v(15)
+Info (10041): Inferred latch for "ALUControl[1]" at ALUcontr.v(15)
+Info (10041): Inferred latch for "ALUControl[2]" at ALUcontr.v(15)
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:alu"
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[31]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[30]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[29]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[28]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[27]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[26]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[25]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[24]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[23]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[22]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[21]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[20]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[19]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[18]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[17]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[16]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[15]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[14]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[13]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[12]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[11]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[10]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[9]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[8]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[7]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[6]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "ALUOp[2]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[31]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[30]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[29]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[28]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[27]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[26]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[25]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[24]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[23]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[22]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[21]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[20]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[19]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[18]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[17]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[16]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[15]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[14]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[13]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[12]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[11]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[10]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[9]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[8]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[7]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[6]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "ALUOp[2]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[31]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[30]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[29]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[28]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[27]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[26]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[25]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[24]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[23]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[22]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[21]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[20]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[19]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[18]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[17]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[16]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[15]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[14]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[13]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[12]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[11]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[10]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[9]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[8]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[7]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[6]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "ALUOp[2]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[31]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[30]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[29]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[28]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[27]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[26]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[25]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[24]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[23]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[22]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[21]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[20]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[19]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[18]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[17]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[16]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[15]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[14]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[13]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[12]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[11]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[10]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[9]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[8]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[7]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[6]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[31]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[30]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[29]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[28]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[27]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[26]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[25]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[24]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[23]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[22]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[21]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[20]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[19]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[18]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[17]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[16]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[15]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[14]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[13]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[12]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[11]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[10]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[9]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[8]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[7]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[6]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[5]" is missing source, defaulting to GND
+    Warning (12110): Net "PCValue[4]" is missing source, defaulting to GND
+    Warning (12110): Net "ALUOp[2]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[31]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[30]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[29]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[28]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[27]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[26]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[25]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[24]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[23]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[22]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[21]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[20]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[19]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[18]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[17]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[16]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[15]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[14]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[13]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[12]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[11]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[10]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[9]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[8]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[7]" is missing source, defaulting to GND
+    Warning (12110): Net "mux_output1[6]" is missing source, defaulting to GND
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "registrador:reg_bank|registradores" is uninferred due to asynchronous read logic
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/aluno/Desktop/Pratica4/db/microcpu.ram0_InstructionMemory_d1968ec4.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (14026): LATCH primitive "ALUcontr:controlALU|ALUControl[0]" is permanently enabled
+Warning (14026): LATCH primitive "ALUcontr:controlALU|ALUControl[1]" is permanently enabled
+Warning (14026): LATCH primitive "ALUcontr:controlALU|ALUControl[2]" is permanently enabled
+Warning (14026): LATCH primitive "registrador:reg_bank|Data1[4]" is permanently enabled
+Warning (14026): LATCH primitive "registrador:reg_bank|Data1[3]" is permanently enabled
+Warning (14026): LATCH primitive "registrador:reg_bank|Data1[2]" is permanently enabled
+Warning (14026): LATCH primitive "registrador:reg_bank|Data1[1]" is permanently enabled
+Warning (14026): LATCH primitive "registrador:reg_bank|Data1[0]" is permanently enabled
+Warning (14026): LATCH primitive "registrador:reg_bank|Data1[5]" is permanently enabled
+Warning (14026): LATCH primitive "registrador:reg_bank|Data2[4]" is permanently enabled
+Warning (14026): LATCH primitive "registrador:reg_bank|Data2[3]" is permanently enabled
+Warning (14026): LATCH primitive "registrador:reg_bank|Data2[2]" is permanently enabled
+Warning (14026): LATCH primitive "registrador:reg_bank|Data2[1]" is permanently enabled
+Warning (14026): LATCH primitive "registrador:reg_bank|Data2[0]" is permanently enabled
+Warning (14026): LATCH primitive "registrador:reg_bank|Data2[5]" is permanently enabled
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/aluno/Desktop/Pratica4/db/microcpu.ram1_registrador_22a2287f.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX7[5]" is stuck at GND
+    Warning (13410): Pin "HEX6[5]" is stuck at GND
+    Warning (13410): Pin "HEX5[6]" is stuck at GND
+    Warning (13410): Pin "HEX5[3]" is stuck at GND
+    Warning (13410): Pin "HEX5[0]" is stuck at GND
+    Warning (13410): Pin "HEX4[2]" is stuck at GND
+    Warning (13410): Pin "HEX1[2]" is stuck at GND
+Info (17049): 982 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/aluno/Desktop/Pratica4/output_files/microcpu.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[0]"
+    Warning (15610): No output dependent on input pin "SW[1]"
+    Warning (15610): No output dependent on input pin "SW[2]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[7]"
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+    Warning (15610): No output dependent on input pin "SW[10]"
+    Warning (15610): No output dependent on input pin "SW[11]"
+    Warning (15610): No output dependent on input pin "SW[12]"
+    Warning (15610): No output dependent on input pin "SW[13]"
+    Warning (15610): No output dependent on input pin "SW[14]"
+    Warning (15610): No output dependent on input pin "SW[15]"
+Info (21057): Implemented 132 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 49 output pins
+    Info (21061): Implemented 65 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 229 warnings
+    Info: Peak virtual memory: 4599 megabytes
+    Info: Processing ended: Thu Jan 30 10:24:18 2025
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/aluno/Desktop/Pratica4/output_files/microcpu.map.smsg.
+
+

@@ -1,0 +1,49 @@
+module ControlUnit (
+    input [6:0] opcode,
+    input [2:0] funct3,
+    input [6:0] funct7,
+    output reg RegWrite,
+    output reg ALUSrc,
+    output reg [2:0] ALUControl
+);
+    always @(*) begin
+        // Inicialização dos sinais
+        RegWrite = 0;
+        ALUSrc = 0;
+        ALUControl = 3'b000;
+
+        // Decodificação do opcode
+        case (opcode)
+            7'b0110011: begin // Tipo R
+                RegWrite = 1;
+                ALUSrc = 0;
+                case (funct3)
+                    3'b000: ALUControl = (funct7 == 7'b0100000) ? 3'b001 : 3'b000; // SUB ou ADD
+                    3'b111: ALUControl = 3'b100; // AND
+                    3'b110: ALUControl = 3'b101; // OR
+                    default: ALUControl = 3'b000;
+                endcase
+            end
+            7'b0010011: begin // Tipo I (ADDI)
+                RegWrite = 1;
+                ALUSrc = 1;
+                ALUControl = 3'b000; // ADD
+            end
+            7'b0000011: begin // LW
+                RegWrite = 1;
+                ALUSrc = 1;
+                ALUControl = 3'b000; // ADD
+            end
+            7'b0100011: begin // SW
+                RegWrite = 0;
+                ALUSrc = 1;
+                ALUControl = 3'b000; // ADD
+            end
+            default: begin
+                RegWrite = 0;
+                ALUSrc = 0;
+                ALUControl = 3'b000;
+            end
+        endcase
+    end
+endmodule

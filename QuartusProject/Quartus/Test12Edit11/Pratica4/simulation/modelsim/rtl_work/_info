@@ -1,0 +1,234 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\vitor\Desktop\Pratica4\simulation\modelsim
+vALUcontr
+!i10b 1
+!s100 D4K1;ALTBWNfZQfcXIn7:1
+Ib;W<2RL_bI9GSTBI^PHzL3
+V98nIE6MZh4UPBi<Zl^@@:1
+Z1 dC:\Users\vitor\Desktop\Pratica4\simulation\modelsim
+w1737636555
+8C:/Users/vitor/Desktop/Pratica4/ALUcontr.v
+FC:/Users/vitor/Desktop/Pratica4/ALUcontr.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+!s85 0
+31
+!s108 1738159173.247000
+!s107 C:/Users/vitor/Desktop/Pratica4/ALUcontr.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/vitor/Desktop/Pratica4|C:/Users/vitor/Desktop/Pratica4/ALUcontr.v|
+!s101 -O0
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/Users/vitor/Desktop/Pratica4 -O0
+n@a@l@ucontr
+vControlUnit
+I`K]nSP]MjRZo2ZS<n@UgC1
+VP4>XJ6AzU2in7f@P:e=GU0
+R1
+w1737639120
+8C:/Users/vitor/Desktop/Pratica4/output_files/ControlUnit.v
+FC:/Users/vitor/Desktop/Pratica4/output_files/ControlUnit.v
+L0 1
+R2
+r1
+31
+R3
+Z5 !s92 -vlog01compat -work work +incdir+C:/Users/vitor/Desktop/Pratica4/output_files -O0
+n@control@unit
+!i10b 1
+!s100 KP@_MiNYcBcn:BhK9`Lgz0
+!s85 0
+!s108 1738159173.140000
+!s107 C:/Users/vitor/Desktop/Pratica4/output_files/ControlUnit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/vitor/Desktop/Pratica4/output_files|C:/Users/vitor/Desktop/Pratica4/output_files/ControlUnit.v|
+!s101 -O0
+vFullAdder1Bit
+IJk_TPY]M<k^EcWG?A[k131
+VURn@^2MW0ldX2TgTBZJH]3
+R1
+Z6 w1737543599
+Z7 8C:/Users/vitor/Desktop/Pratica4/SomadorCompleto.v
+Z8 FC:/Users/vitor/Desktop/Pratica4/SomadorCompleto.v
+L0 39
+R2
+r1
+31
+Z9 !s108 1738159172.729000
+Z10 !s107 C:/Users/vitor/Desktop/Pratica4/SomadorCompleto.v|
+Z11 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/vitor/Desktop/Pratica4|C:/Users/vitor/Desktop/Pratica4/SomadorCompleto.v|
+R3
+R4
+n@full@adder1@bit
+!i10b 1
+!s100 IZ[XX14c0?M7HU;3e?EJB1
+!s85 0
+!s101 -O0
+vInstructionMemory
+Ie=F^bXHGdKP>B=D2Y[]_52
+VH3oU]VEjc3>;4BAfYK_jT2
+R1
+w1737639407
+8C:/Users/vitor/Desktop/Pratica4/InstructionMemory.v
+FC:/Users/vitor/Desktop/Pratica4/InstructionMemory.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@instruction@memory
+!i10b 1
+!s100 Wf5VDkS:YS0F3o<FC9C^W2
+!s85 0
+!s108 1738159172.859000
+!s107 C:/Users/vitor/Desktop/Pratica4/InstructionMemory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/vitor/Desktop/Pratica4|C:/Users/vitor/Desktop/Pratica4/InstructionMemory.v|
+!s101 -O0
+vmicrocpu
+I5oEb0f3oU>dgkk``IPb323
+VA5lMnE2i^fNNY=k`AQ05E3
+R1
+w1737636441
+8C:/Users/vitor/Desktop/Pratica4/microcpu.v
+FC:/Users/vitor/Desktop/Pratica4/microcpu.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 @beiB3^LH[Ue3NLO1RKJD0
+!s85 0
+!s108 1738159172.312000
+!s107 C:/Users/vitor/Desktop/Pratica4/microcpu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/vitor/Desktop/Pratica4|C:/Users/vitor/Desktop/Pratica4/microcpu.v|
+!s101 -O0
+vMUX
+InfTc8LFfDjTC@0Nj9SFSI2
+VRnI[MYZjg@UP`6zC9l9X:1
+R1
+Z12 w1737543607
+8C:/Users/vitor/Desktop/Pratica4/output_files/MUX.v
+FC:/Users/vitor/Desktop/Pratica4/output_files/MUX.v
+L0 1
+R2
+r1
+31
+R3
+R5
+n@m@u@x
+!i10b 1
+!s100 ooS;31>D1kL6YI;<U8Fmj0
+!s85 0
+!s108 1738159173.046000
+!s107 C:/Users/vitor/Desktop/Pratica4/output_files/MUX.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/vitor/Desktop/Pratica4/output_files|C:/Users/vitor/Desktop/Pratica4/output_files/MUX.v|
+!s101 -O0
+vPC
+IC`S6_QJc>eci;0nQ^=P0l3
+V=dcBfR2`PY=lMh>zbSLeC2
+R1
+R6
+8C:/Users/vitor/Desktop/Pratica4/PC.v
+FC:/Users/vitor/Desktop/Pratica4/PC.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@p@c
+!i10b 1
+!s100 CT>ai8=63dm[DS@fU?Tfj3
+!s85 0
+!s108 1738159172.635000
+!s107 C:/Users/vitor/Desktop/Pratica4/PC.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/vitor/Desktop/Pratica4|C:/Users/vitor/Desktop/Pratica4/PC.v|
+!s101 -O0
+vregistrador
+IDK`?63MG1z6Y2V>CO`XUn3
+ViE9C=k>1dU7T9QIBLm9Ih1
+R1
+w1737639353
+8C:/Users/vitor/Desktop/Pratica4/registrador.v
+FC:/Users/vitor/Desktop/Pratica4/registrador.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 LI<5eRQcUeONSL2UJGQk91
+!s85 0
+!s108 1738159172.526000
+!s107 C:/Users/vitor/Desktop/Pratica4/registrador.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/vitor/Desktop/Pratica4|C:/Users/vitor/Desktop/Pratica4/registrador.v|
+!s101 -O0
+vSignExtend
+IS4lgfhoe2hWTQS:g6nfXi2
+VeE4`S3Nok6WEYQBhH`z?:3
+R1
+R12
+8C:/Users/vitor/Desktop/Pratica4/output_files/SignExtend.v
+FC:/Users/vitor/Desktop/Pratica4/output_files/SignExtend.v
+L0 1
+R2
+r1
+31
+R3
+n@sign@extend
+R5
+!i10b 1
+!s100 k6lkK9L2mDc3>CRGZ2V=D3
+!s85 0
+!s108 1738159172.953000
+!s107 C:/Users/vitor/Desktop/Pratica4/output_files/SignExtend.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/vitor/Desktop/Pratica4/output_files|C:/Users/vitor/Desktop/Pratica4/output_files/SignExtend.v|
+!s101 -O0
+vSomadorCompleto
+I[B?NLFW9dbbMVB]K3dVJi1
+V1GV2m^oX8`aA<C>Fo^i1`1
+R1
+R6
+R7
+R8
+L0 1
+R2
+r1
+31
+R9
+R10
+R11
+R3
+R4
+n@somador@completo
+!i10b 1
+!s100 c5kAeTUifET4TKKWi]AN33
+!s85 0
+!s101 -O0
+vULA
+IDIGB50Q3k^>QG?nDCQfzG1
+V07Idb]`XX1WVIo^Tn]GQ^1
+R1
+w1737634309
+8C:/Users/vitor/Desktop/Pratica4/ULA.v
+FC:/Users/vitor/Desktop/Pratica4/ULA.v
+L0 9
+R2
+r1
+31
+R3
+R4
+n@u@l@a
+!i10b 1
+!s100 ZfG<8mLUV0;nY>^zQa?nd3
+!s85 0
+!s108 1738159172.437000
+!s107 C:/Users/vitor/Desktop/Pratica4/ULA.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/vitor/Desktop/Pratica4|C:/Users/vitor/Desktop/Pratica4/ULA.v|
+!s101 -O0
